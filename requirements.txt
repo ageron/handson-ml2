@@ -1,0 +1,12 @@
+jupyter
+matplotlib
+numpy
+pandas
+Pillow
+scikit-learn
+scipy
+git+git://github.com/tensorflow/skflow.git
+sympy
+https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-0.7.0-py2-none-linux_x86_64.whl
+wheel
+
