@@ -1,3 +1,6 @@
 .ipynb_checkpoints
 my_*.png
 my_*.mp4
+my_*.csv
+my_*.npy
+my_*.npz
