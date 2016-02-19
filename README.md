@@ -27,7 +27,7 @@ If you want an isolated environment, you can use [virtualenv](https://virtualenv
     $ virtualenv env
     $ source ./env/bin/activate
 
-Default platform is python 2, Ubuntu/Linux 64 bits. If your platforms is different, please edit `requirements.txt` using your favorite editor, comment the tensorflow line and uncomment the right version of TensorFlow for your platform.
+There are different packages for TensorFlow, depending on your platform. Please edit `requirements.txt` using your favorite editor, and make sure only the right one for your platform is uncommented. Default is Python 2, Ubuntu/Linux 64-bits, CPU-only.
 
 Then install the required python packages using pip:
 

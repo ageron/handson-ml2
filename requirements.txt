@@ -11,8 +11,8 @@ wheel
 
 ######
 #####
-#### Uncomment the right version of TensorFlow for your system
-###
+#### Uncomment only the right version of TensorFlow for your system
+###  (default is Python 2, Ubuntu/Linux 64-bit, CPU only)
 ##
 # Python 2, Ubuntu/Linux 64-bit, CPU only:
 https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-0.7.0-py2-none-linux_x86_64.whl
