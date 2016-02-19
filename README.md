@@ -14,11 +14,11 @@ Simply open the [Jupyter](http://jupyter.org/) notebooks you are interested in:
 
 # Installation
 
-You will need [git](https://git-scm.com/), obviously.
+Obviously, you will need [git](https://git-scm.com/) and [python](https://www.python.org/downloads/) (2 or 3).
 
 First, clone this repository:
 
-    $ cd {*your development directory*}
+    $ cd {your development directory}
     $ git clone https://github.com/ageron/ml-notebooks.git
     $ cd ml-notebooks
 
@@ -27,15 +27,12 @@ If you want an isolated environment, you can use [virtualenv](https://virtualenv
     $ virtualenv env
     $ source ./env/bin/activate
 
-Next, install the required python packages using pip:
+Next, edit `requirements.txt` to uncomment the right version of TensorFlow for your platform, then install the required python packages using pip:
 
-    $ pip install -r requirements.txt         # On Linux
-    OR
-    $ pip install -r requirements_macosx.txt  # On MacOSX
+    $ pip install -r requirements.txt
 
 Finally, launch Jupyter:
 
     $ jupyter notebook
 
-This should start the Jupyter server locally, and open a browser window. Click on `index.ipynb` to get started.
-
+This should start the Jupyter server locally, and open your browser. Click on `index.ipynb` to get started.
