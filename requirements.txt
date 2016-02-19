@@ -7,6 +7,27 @@ scikit-learn
 scipy
 git+git://github.com/tensorflow/skflow.git
 sympy
-https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-0.7.0-py2-none-linux_x86_64.whl
 wheel
 
+######
+#####
+#### Uncomment the right version of TensorFlow for your system
+###
+##
+# Python 2, Ubuntu/Linux 64-bit, CPU only:
+#https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-0.7.0-py2-none-linux_x86_64.whl
+
+# Python 2, Ubuntu/Linux 64-bit, GPU enabled:
+#https://storage.googleapis.com/tensorflow/linux/gpu/tensorflow-0.7.0-py2-none-linux_x86_64.whl
+
+# Python 2, Mac OS X, CPU only:
+#https://storage.googleapis.com/tensorflow/mac/tensorflow-0.7.0-py2-none-any.whl
+
+# Python 3, Ubuntu/Linux 64-bit, CPU only:
+#https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-0.7.0-py3-none-linux_x86_64.whl
+
+# Python 3, Ubuntu/Linux 64-bit, GPU enabled:
+#https://storage.googleapis.com/tensorflow/linux/gpu/tensorflow-0.7.0-py3-none-linux_x86_64.whl
+
+# Python 3, Mac OS X, CPU only:
+#https://storage.googleapis.com/tensorflow/mac/tensorflow-0.7.0-py3-none-any.whl
