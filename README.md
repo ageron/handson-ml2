@@ -1,6 +1,8 @@
 Machine Learning Notebooks
 ==========================
 
+[![Gitter](https://badges.gitter.im/ageron/ml-notebooks.svg)](https://gitter.im/ageron/ml-notebooks?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+
 This project aims at teaching you the fundamentals of Machine Learning in
 python. 
 
@@ -13,6 +15,8 @@ Simply open the [Jupyter](http://jupyter.org/) notebooks you are interested in:
     * if you prefer this option, follow the installation instructions below.
 
 # Installation
+
+No installation is required, just click the *launch binder* button above, and you're good to go! But if you insist, here's how to install these notebooks on your system.
 
 Obviously, you will need [git](https://git-scm.com/) and [python](https://www.python.org/downloads/) (2 or 3).
 
