@@ -4,11 +4,16 @@ numexpr
 numpy
 pandas
 Pillow
+psutil
 scikit-learn
 scipy
 git+git://github.com/tensorflow/skflow.git
 sympy
 wheel
+
+# Optional: these are useful Jupyter extensions, in particular to display
+# the table of contents.
+https://github.com/ipython-contrib/IPython-notebook-extensions/archive/master.zip
 
 ######
 #####
