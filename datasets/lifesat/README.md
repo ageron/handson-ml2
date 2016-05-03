@@ -88,7 +88,7 @@ Dataset obtained from the IMF's website at: http://goo.gl/j1MSKe
 
     >>> gdp_per_capita = pd.read_csv(
     ...     datapath+"gdp_per_capita.csv", thousands=',', delimiter='\t',
-    ...     encoding='latin1', na_values="n/a")
+    ...     encoding='latin1', na_values="n/a", index_col="Country")
     ...
     >>> gdp_per_capita.rename(columns={"2015": "GDP per capita"}, inplace=True)
-    >>> gdp_per_capita.set_index("Country", inplace=True)
+
