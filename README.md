@@ -8,7 +8,7 @@ python.
 
 Simply open the [Jupyter](http://jupyter.org/) notebooks you are interested in:
 
-* using [Binder](http://mybinder.org/): [![Binder](http://mybinder.org/badge.svg)](http://mybinder.org/repo/ageron/ml-notebooks)
+* using Binder: [![Binder](http://mybinder.org/badge.svg)](http://mybinder.org/repo/ageron/ml-notebooks)
     * this let's you experiment with the code examples
 * or using [jupyter.org's notebook viewer](http://nbviewer.jupyter.org/github/ageron/ml-notebooks/blob/master/index.ipynb)
     * note: [github.com's notebook viewer](https://github.com/ageron/ml-notebooks/blob/master/index.ipynb) also works but it is slower and the math formulas are not displayed correctly
