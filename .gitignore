@@ -2,3 +2,4 @@
 .DS_Store
 my_*
 images/**/*.png
+*.pyc
