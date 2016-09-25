@@ -1,3 +1,4 @@
 .ipynb_checkpoints
 .DS_Store
 my_*
+images/**/*.png
