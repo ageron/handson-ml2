@@ -1,17 +1,17 @@
 Machine Learning Notebooks
 ==========================
 
-[![Gitter](https://badges.gitter.im/ageron/ml-notebooks.svg)](https://gitter.im/ageron/ml-notebooks?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+[![Gitter](https://badges.gitter.im/ageron/handson-ml.svg)](https://gitter.im/ageron/handson-ml?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
 This project aims at teaching you the fundamentals of Machine Learning in
 python. 
 
 Simply open the [Jupyter](http://jupyter.org/) notebooks you are interested in:
 
-* using Binder: [![Binder](http://mybinder.org/badge.svg)](http://mybinder.org/repo/ageron/ml-notebooks)
+* using Binder: [![Binder](http://mybinder.org/badge.svg)](http://mybinder.org/repo/ageron/handson-ml)
     * this let's you experiment with the code examples
-* or using [jupyter.org's notebook viewer](http://nbviewer.jupyter.org/github/ageron/ml-notebooks/blob/master/index.ipynb)
-    * note: [github.com's notebook viewer](https://github.com/ageron/ml-notebooks/blob/master/index.ipynb) also works but it is slower and the math formulas are not displayed correctly
+* or using [jupyter.org's notebook viewer](http://nbviewer.jupyter.org/github/ageron/handson-ml/blob/master/index.ipynb)
+    * note: [github.com's notebook viewer](https://github.com/ageron/handson-ml/blob/master/index.ipynb) also works but it is slower and the math formulas are not displayed correctly
 * or by cloning this repository and running Jupyter locally
     * if you prefer this option, follow the installation instructions below.
 
@@ -24,8 +24,8 @@ Obviously, you will need [git](https://git-scm.com/) and [python](https://www.py
 First, clone this repository:
 
     $ cd {your development directory}
-    $ git clone https://github.com/ageron/ml-notebooks.git
-    $ cd ml-notebooks
+    $ git clone https://github.com/ageron/handson-ml.git
+    $ cd handson-ml
 
 If you want an isolated environment, you can use [virtualenv](https://virtualenv.readthedocs.org/en/latest/):
 
