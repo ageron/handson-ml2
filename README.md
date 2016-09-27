@@ -44,7 +44,7 @@ If you want to install the Jupyter extensions, run the following command:
 
 Then you can activate an extension, such as the Table of Contents (2) extension:
 
-    $ jupyter nbextension enable usability/toc2/main
+    $ jupyter nbextension enable toc2/main
 
 Finally, launch Jupyter:
 
