@@ -1,14 +1,16 @@
 Machine Learning Notebooks
 ==========================
 
-[![Gitter](https://badges.gitter.im/ageron/handson-ml.svg)](https://gitter.im/ageron/handson-ml?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+[![Gitter](https://badges.gitter.im/ageron/handson-ml.svg)](https://gitter.im/ageron/handson-ml?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge) [![Binder](http://mybinder.org/badge.svg)](http://mybinder.org/repo/ageron/handson-ml)
 
 This project aims at teaching you the fundamentals of Machine Learning in
-python. 
+python. It contains the example code from my O'Reilly book [Hands-on Machine Learning with Scikit-Learn and TensorFlow](http://shop.oreilly.com/product/0636920052289.do):
+
+[![book](http://akamaicovers.oreilly.com/images/0636920052289/rc_cat.gif)](http://shop.oreilly.com/product/0636920052289.do)
 
 Simply open the [Jupyter](http://jupyter.org/) notebooks you are interested in:
 
-* using Binder: [![Binder](http://mybinder.org/badge.svg)](http://mybinder.org/repo/ageron/handson-ml)
+* using Binder: [launch binder](http://mybinder.org/repo/ageron/handson-ml)
     * this let's you experiment with the code examples
 * or using [jupyter.org's notebook viewer](http://nbviewer.jupyter.org/github/ageron/handson-ml/blob/master/index.ipynb)
     * note: [github.com's notebook viewer](https://github.com/ageron/handson-ml/blob/master/index.ipynb) also works but it is slower and the math formulas are not displayed correctly
@@ -17,7 +19,7 @@ Simply open the [Jupyter](http://jupyter.org/) notebooks you are interested in:
 
 # Installation
 
-No installation is required, just click the *launch binder* button above, and you're good to go! But if you insist, here's how to install these notebooks on your system.
+No installation is required, just click the *launch binder* button above, this creates a new VM with everything you need already preinstalled, so you'll be good to go in a just a few seconds! But if you insist, here's how to install these notebooks on your own system.
 
 Obviously, you will need [git](https://git-scm.com/) and [python](https://www.python.org/downloads/) (python 3 is recommended, but python 2 should work as well).
 
@@ -36,7 +38,7 @@ There are different packages for TensorFlow, depending on your platform. Please 
 
 Then install the required python packages using pip:
 
-    $ pip install -r requirements.txt
+    $ pip install --upgrade -r requirements.txt
 
 If you want to install the Jupyter extensions, run the following command:
 
