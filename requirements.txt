@@ -13,7 +13,7 @@ wheel
 
 # Optional: these are useful Jupyter extensions, in particular to display
 # the table of contents.
-https://github.com/ipython-contrib/IPython-notebook-extensions/archive/master.zip
+https://github.com/ipython-contrib/jupyter_contrib_nbextensions/tarball/master
 
 ######
 #####

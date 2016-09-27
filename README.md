@@ -19,7 +19,7 @@ Simply open the [Jupyter](http://jupyter.org/) notebooks you are interested in:
 
 No installation is required, just click the *launch binder* button above, and you're good to go! But if you insist, here's how to install these notebooks on your system.
 
-Obviously, you will need [git](https://git-scm.com/) and [python](https://www.python.org/downloads/) (2 or 3).
+Obviously, you will need [git](https://git-scm.com/) and [python](https://www.python.org/downloads/) (python 3 is recommended, but python 2 should work as well).
 
 First, clone this repository:
 
@@ -32,14 +32,18 @@ If you want an isolated environment, you can use [virtualenv](https://virtualenv
     $ virtualenv env
     $ source ./env/bin/activate
 
-There are different packages for TensorFlow, depending on your platform. Please edit `requirements.txt` using your favorite editor, and make sure only the right one for your platform is uncommented. Default is Python 2, Ubuntu/Linux 64-bits, CPU-only.
+There are different packages for TensorFlow, depending on your platform. Please edit `requirements.txt` using your favorite editor, and make sure only the right one for your platform is uncommented. Default is Python 3.5, Ubuntu/Linux 64-bits, CPU-only.
 
 Then install the required python packages using pip:
 
     $ pip install -r requirements.txt
 
+If you want to install the Jupyter extensions, run the following command (this is optional but recommended as it allows you to view a table of contents in each notebook):
+
+    $ jupyter contrib nbextension install --user
+
 Finally, launch Jupyter:
 
     $ jupyter notebook
 
-This should start the Jupyter server locally, and open your browser. Click on `index.ipynb` to get started.
+This should start the Jupyter server locally, and open your browser. Click on `index.ipynb` to get started (note: you can visit `/nbextensions` to turn extensions on or off).
