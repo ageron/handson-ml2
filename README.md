@@ -38,12 +38,18 @@ Then install the required python packages using pip:
 
     $ pip install -r requirements.txt
 
-If you want to install the Jupyter extensions, run the following command (this is optional but recommended as it allows you to view a table of contents in each notebook):
+If you want to install the Jupyter extensions, run the following command:
 
     $ jupyter contrib nbextension install --user
+
+Then you can activate an extension, such as the Table of Contents (2) extension:
+
+    $ jupyter nbextension enable toc2/toc2
 
 Finally, launch Jupyter:
 
     $ jupyter notebook
 
-This should start the Jupyter server locally, and open your browser. Click on `index.ipynb` to get started (note: you can visit `/nbextensions` to turn extensions on or off).
+This should start the Jupyter server locally, and open your browser. If your browser does not open automatically, visit [localhost:8888](http://localhost:8888/tree). Click on `index.ipynb` to get started. You can visit [http://localhost:8888/nbextensions](http://localhost:8888/nbextensions) to activate and configure Jupyter extensions.
+
+That's it! Have fun learning ML.
