@@ -1,5 +1,10 @@
-.ipynb_checkpoints
-.DS_Store
-my_*
-images/**/*.png
+*.bak
+*.ckpt
 *.pyc
+.DS_Store
+.ipynb_checkpoints
+checkpoint
+logs/*
+tf_logs/*
+images/**/*.png
+my_*

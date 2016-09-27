@@ -94,7 +94,9 @@ def inception_v3_base(inputs,
     raise ValueError('depth_multiplier is not greater than zero.')
   depth = lambda d: max(int(d * depth_multiplier), min_depth)
 
-  with tf.variable_scope(scope, 'InceptionV3', [inputs]):
+  #Backported to 0.10.0
+  #with tf.variable_scope(scope, 'InceptionV3', [inputs]):
+  with tf.variable_scope(scope or 'InceptionV3'):
     with slim.arg_scope([slim.conv2d, slim.max_pool2d, slim.avg_pool2d],
                         stride=1, padding='VALID'):
       # 299 x 299 x 3
@@ -470,8 +472,10 @@ def inception_v3(inputs,
     raise ValueError('depth_multiplier is not greater than zero.')
   depth = lambda d: max(int(d * depth_multiplier), min_depth)
 
-  with tf.variable_scope(scope, 'InceptionV3', [inputs, num_classes],
-                         reuse=reuse) as scope:
+  #Backported to 0.10.0
+  #with tf.variable_scope(scope, 'InceptionV3', [inputs, num_classes],
+  #                       reuse=reuse) as scope:
+  with tf.variable_scope(scope or 'InceptionV3', reuse=reuse) as scope:
     with slim.arg_scope([slim.batch_norm, slim.dropout],
                         is_training=is_training):
       net, end_points = inception_v3_base(
