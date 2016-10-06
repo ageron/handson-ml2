@@ -1,3 +1,4 @@
+gym
 jupyter
 matplotlib
 numexpr
