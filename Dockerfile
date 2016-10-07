@@ -11,10 +11,10 @@ RUN conda install -c jjhelmus tensorflow=0.10.0
 RUN conda install -c conda-forge jupyter_contrib_nbextensions
 RUN jupyter contrib nbextension install --user
 RUN jupyter nbextension enable toc2/main
-RUN pip install gym
-RUN pip install 'gym[atari]'
+RUN pip install --upgrade gym
+RUN pip install --upgrade 'gym[atari]'
 
 # Python 3
 RUN conda install -n python3 -c jjhelmus tensorflow=0.10.0
-RUN /bin/bash -c "source activate python3 && pip install gym"
-RUN /bin/bash -c "source activate python3 && pip install 'gym[atari]'"
+RUN /bin/bash -c "source activate python3 && pip install --upgrade gym"
+RUN /bin/bash -c "source activate python3 && pip install --upgrade 'gym[atari]'"
