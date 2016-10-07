@@ -4,14 +4,14 @@ Machine Learning Notebooks
 [![Gitter](https://badges.gitter.im/ageron/handson-ml.svg)](https://gitter.im/ageron/handson-ml?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge) [![Binder](http://mybinder.org/badge.svg)](http://mybinder.org/repo/ageron/handson-ml)
 
 This project aims at teaching you the fundamentals of Machine Learning in
-python. It contains the example code from my O'Reilly book [Hands-on Machine Learning with Scikit-Learn and TensorFlow](http://shop.oreilly.com/product/0636920052289.do):
+python. It contains the example code and solutions to the exercises in my O'Reilly book [Hands-on Machine Learning with Scikit-Learn and TensorFlow](http://shop.oreilly.com/product/0636920052289.do):
 
 [![book](http://akamaicovers.oreilly.com/images/0636920052289/rc_cat.gif)](http://shop.oreilly.com/product/0636920052289.do)
 
 Simply open the [Jupyter](http://jupyter.org/) notebooks you are interested in:
 
-* using Binder: [launch binder](http://mybinder.org/repo/ageron/handson-ml)
-    * this let's you experiment with the code examples
+* using Binder (recommended): [launch binder](http://mybinder.org/repo/ageron/handson-ml)
+    * no installation needed, you can immediately experiment with the code examples
 * or using [jupyter.org's notebook viewer](http://nbviewer.jupyter.org/github/ageron/handson-ml/blob/master/index.ipynb)
     * note: [github.com's notebook viewer](https://github.com/ageron/handson-ml/blob/master/index.ipynb) also works but it is slower and the math formulas are not displayed correctly
 * or by cloning this repository and running Jupyter locally
@@ -29,16 +29,24 @@ First, clone this repository:
     $ git clone https://github.com/ageron/handson-ml.git
     $ cd handson-ml
 
-If you want an isolated environment, you can use [virtualenv](https://virtualenv.readthedocs.org/en/latest/):
+If you want an isolated environment (recommended), you can use [virtualenv](https://virtualenv.readthedocs.org/en/latest/):
 
     $ virtualenv env
     $ source ./env/bin/activate
 
-There are different packages for TensorFlow, depending on your platform. Please edit `requirements.txt` using your favorite editor, and make sure only the right one for your platform is uncommented. Default is Python 3.5, Ubuntu/Linux 64-bits, CPU-only.
+There are different packages for TensorFlow, depending on your platform. Please edit `requirements.txt` and make sure only the right one for your platform is uncommented. Default is Python 3.5, Ubuntu/Linux 64-bits, CPU-only.
 
-Then install the required python packages using pip:
+Also, if you want to go through chapter 16 on Reinforcement Learning, you will need to [install OpenAI gym](https://gym.openai.com/docs) and its dependencies for Atari simulations.
 
+Then make sure pip is up to date, and use it to install the required python packages:
+
+    $ pip install --upgrade pip
     $ pip install --upgrade -r requirements.txt
+
+If you prefer to use [Anaconda](https://www.continuum.io/), you can run the following commands instead:
+
+    $ conda install -c jjhelmus tensorflow=0.10.0
+    $ conda install -c conda-forge jupyter_contrib_nbextensions
 
 If you want to install the Jupyter extensions, run the following command:
 
