@@ -1,0 +1,100 @@
+# Andrew Osheroff's docker base image, using system python rather than conda
+# https://github.com/binder-project/binder-build-core ... /images/python/3.5
+FROM debian:jessie
+
+MAINTAINER Aurelien Geron <aurelien.geron@gmail.com>
+
+ENV DEBIAN_FRONTEND noninteractive
+
+RUN apt-get update -y &&\
+    apt-get install --fix-missing -y \
+        build-essential\
+        bzip2\
+        cmake\
+        curl\
+        gcc\
+        gfortran\
+        git\
+        libav-tools\
+        libboost-all-dev\
+        libglib2.0-0\
+        libjpeg-dev\
+        libsdl2-dev\
+        libsm6\
+        locales\
+        nodejs-legacy\
+        npm\
+        python-dev\
+        python-opengl\
+        python-pip\
+        python-qt4\
+        python-virtualenv\
+        python3-dev\
+        python3-opengl\
+        python3-pip\
+        python3-virtualenv\
+        swig\
+        vim\
+        wget\
+        xorg-dev\
+        xvfb\
+        zlib1g-dev &&\
+    apt-get clean &&\
+    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*tmp
+
+# set utf8 locale:
+RUN echo "en_US.UTF-8 UTF-8" > /etc/locale.gen && locale-gen
+ENV LANG=en_US.UTF-8 \
+    LC_ALL=en_US.UTF-8
+
+# We run our docker images with a non-root user as a security precaution.
+# main is our user
+RUN useradd -m -s /bin/bash main
+
+EXPOSE 8888
+
+USER main
+ENV HOME /home/main
+ENV SHELL /bin/bash
+ENV USER main
+WORKDIR $HOME
+
+# Add helper scripts
+ADD start-notebook.sh /home/main/
+
+USER main
+
+ENV SHELL /bin/bash
+
+RUN pip install --upgrade --user pip wheel
+RUN pip3 install --upgrade --user pip wheel
+
+ENV PATH /home/main/.local/bin:$PATH
+
+# Install scientific packages
+RUN pip install --upgrade --user matplotlib numexpr numpy pandas Pillow protobuf psutil scipy scikit-learn sympy
+RUN pip3 install --upgrade --user matplotlib numexpr numpy pandas Pillow protobuf psutil scipy scikit-learn sympy
+
+# Install TensorFlow
+RUN pip install --upgrade --user https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-0.11.0rc0-cp27-none-linux_x86_64.whl
+RUN pip3 install --upgrade --user https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-0.11.0rc0-cp34-cp34m-linux_x86_64.whl
+
+# Install OpenAI gym
+RUN pip install --upgrade --user gym
+RUN pip3 install --upgrade --user gym
+RUN pip install --upgrade --user "gym[atari]"
+RUN pip3 install --upgrade --user "gym[atari]"
+
+# Install Jupyter and Jupyter extensions
+RUN pip install --upgrade --user jupyter https://github.com/ipython-contrib/jupyter_contrib_nbextensions/tarball/master
+RUN pip3 install --upgrade --user jupyter https://github.com/ipython-contrib/jupyter_contrib_nbextensions/tarball/master
+
+# Replace script to start Jupyter with xvfb-run
+ADD start-notebook.sh /home/main/
+
+RUN ipython2 kernel install --user
+RUN ipython3 kernel install --user
+
+# Install Notebook extensions and activate the ToC extension
+RUN jupyter contrib nbextension install --user
+RUN jupyter nbextension enable toc2/main
