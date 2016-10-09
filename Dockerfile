@@ -33,8 +33,8 @@ RUN jupyter contrib nbextension install --user
 RUN jupyter nbextension enable toc2/main
 
 # Use upgraded pip
-RUN pip install --upgrade --user pip wheel
-RUN pip3 install --upgrade --user pip wheel
+RUN /usr/bin/pip install --upgrade --user pip wheel
+RUN /usr/bin/pip3 install --upgrade --user pip wheel
 ENV PATH /home/main/.local/bin:$PATH
 
 # Install scientific packages
