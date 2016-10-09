@@ -59,15 +59,10 @@ ENV SHELL /bin/bash
 ENV USER main
 WORKDIR $HOME
 
-# Add helper scripts
-ADD start-notebook.sh /home/main/
-
-USER main
-
 ENV SHELL /bin/bash
 
-RUN pip install --upgrade --user pip wheel
-RUN pip3 install --upgrade --user pip wheel
+RUN /usr/bin/pip install --upgrade --user pip wheel
+RUN /usr/bin/pip3 install --upgrade --user pip wheel
 
 ENV PATH /home/main/.local/bin:$PATH
 
@@ -89,12 +84,12 @@ RUN pip3 install --upgrade --user "gym[atari]"
 RUN pip install --upgrade --user jupyter https://github.com/ipython-contrib/jupyter_contrib_nbextensions/tarball/master
 RUN pip3 install --upgrade --user jupyter https://github.com/ipython-contrib/jupyter_contrib_nbextensions/tarball/master
 
+# Install Notebook extensions and activate the ToC extension
+RUN jupyter contrib nbextension install --user
+RUN jupyter nbextension enable toc2/main
+
 # Replace script to start Jupyter with xvfb-run
 ADD start-notebook.sh /home/main/
 
 RUN ipython2 kernel install --user
 RUN ipython3 kernel install --user
-
-# Install Notebook extensions and activate the ToC extension
-RUN jupyter contrib nbextension install --user
-RUN jupyter nbextension enable toc2/main
