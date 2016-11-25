@@ -46,6 +46,8 @@ RUN pip3 install --user --upgrade 'gym[all]'
 # Install Jupyter extensions
 RUN pip3 install --user --upgrade https://github.com/ipython-contrib/jupyter_contrib_nbextensions/tarball/master
 
+RUN rm -rf /home/main/.cache
+
 # Jupyter extensions
 #RUN conda install -c conda-forge jupyter_contrib_nbextensions
 RUN jupyter contrib nbextension install --user
