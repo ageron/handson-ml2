@@ -1,21 +1,41 @@
-jupyter
-matplotlib
-numexpr
-numpy
-pandas
-Pillow
-protobuf
-psutil
-scikit-learn
-scipy
-sympy
-wheel
+# First make sure to update pip:
+#     $ sudo pip install --upgrade pip
+#
+# Then you probably want to work in a virtualenv (optional):
+#     $ sudo pip install --upgrade virtualenv
+# Or if you prefer, in Ubuntu:
+#     $ sudo apt-get update && sudo apt-get install virtualenv
+# Then:
+#     $ cd $my_work_dir
+#     $ virtualenv my_env
+#     $ . my_env/bin/activate
+#
+# Next, optionally uncomment the OpenAI gym lines (see below). If you do, make sure to install the dependencies.
+#
+# Then uncomment only the desired version of TensorFlow (see below), and install the requirements:
+#     $ pip install --upgrade -r requirements.txt
+#
+# Finally, start jupyter:
+#     $ jupyter notebook
+#
+
+jupyter==1.0.0
+matplotlib==1.5.3
+numexpr==2.6.1
+numpy==1.11.2
+pandas==0.19.1
+Pillow==3.4.2
+protobuf==3.0.0
+psutil==5.0.0
+scikit-learn==0.18.1
+scipy==0.18.1
+sympy==1.0
 
 # Optional: OpenAI gym is only needed for the Reinforcement Learning chapter.
 # There are a few dependencies you need to install first, check out:
 # https://github.com/openai/gym#installing-everything
-#gym
-#gym[atari]
+#gym==0.5.4
+#atari-py==0.0.18
 
 # Optional: these are useful Jupyter extensions, in particular to display
 # the table of contents.
@@ -24,7 +44,7 @@ https://github.com/ipython-contrib/jupyter_contrib_nbextensions/tarball/master
 ######
 #####
 #### Uncomment only the right version of TensorFlow for your system
-###  (default is Python 3, Ubuntu/Linux 64-bit, CPU only)
+###  (default is Python 3.5, Ubuntu/Linux 64-bit, CPU only)
 ##
 
 # For GPU versions, requires CUDA toolkit 7.5 and CuDNN v5.
