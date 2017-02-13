@@ -23,6 +23,7 @@ RUN apt-get update -y &&\
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*tmp
 
 USER main
+ADD requirements.txt /home/main/
 
 RUN /usr/bin/pip2 install --upgrade --user pip wheel
 RUN /usr/bin/pip3 install --upgrade --user pip wheel
@@ -30,18 +31,12 @@ RUN /usr/bin/pip3 install --upgrade --user pip wheel
 ENV PATH /home/main/.local/bin:$PATH
 
 # Install scientific packages
-RUN pip2 install --upgrade --user matplotlib numexpr numpy pandas Pillow protobuf psutil scipy scikit-learn sympy jupyter
-RUN pip3 install --upgrade --user matplotlib numexpr numpy pandas Pillow protobuf psutil scipy scikit-learn sympy jupyter
-
-# Install TensorFlow
-RUN pip2 install --user --upgrade https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-0.11.0-cp27-none-linux_x86_64.whl
-RUN pip3 install --user --upgrade https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-0.11.0-cp34-cp34m-linux_x86_64.whl
+RUN pip2 install --upgrade --user -r requirements.txt
+RUN pip3 install --upgrade --user -r requirements.txt
 
 # Install OpenAI gym
-RUN pip2 install --user --upgrade gym
-RUN pip3 install --user --upgrade gym
-RUN pip2 install --user --upgrade 'gym[all]'
-RUN pip3 install --user --upgrade 'gym[all]'
+RUN pip2 install --upgrade --user 'gym[all]'
+RUN pip3 install --upgrade --user 'gym[all]'
 
 # Install Jupyter extensions
 RUN pip3 install --user --upgrade https://github.com/ipython-contrib/jupyter_contrib_nbextensions/tarball/master
@@ -58,3 +53,9 @@ RUN /usr/bin/python2 -m ipykernel install --user
 RUN /usr/bin/python3 -m ipykernel install --user
 
 ADD .binder_start /home/main/
+
+RUN mkdir -p $HOME/.jupyter
+RUN echo "c.NotebookApp.token = ''" >> $HOME/.jupyter/jupyter_notebook_config.py
+RUN echo "c.NotebookApp.password=''" >> $HOME/.jupyter/jupyter_notebook_config.py
+RUN echo "c.NotebookApp.password_required=False" >> $HOME/.jupyter/jupyter_notebook_config.py
+

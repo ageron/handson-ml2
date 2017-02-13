@@ -3,18 +3,18 @@
 #
 # Then you probably want to work in a virtualenv (optional):
 #     $ sudo pip install --upgrade virtualenv
-# Or if you prefer, in Ubuntu:
+# Or if you prefer you can install virtualenv using your favorite packaging system. E.g., in Ubuntu:
 #     $ sudo apt-get update && sudo apt-get install virtualenv
 # Then:
 #     $ cd $my_work_dir
 #     $ virtualenv my_env
 #     $ . my_env/bin/activate
 #
-# Next, optionally uncomment the OpenAI gym lines (see below). If you do, make sure to install the dependencies.
+# Next, optionally uncomment the OpenAI gym lines (see below). If you do, make sure to install the dependencies first.
 #
-# Then uncomment only the desired version of TensorFlow (see below), and install the requirements:
+# Then install these requirements:
 #     $ pip install --upgrade -r requirements.txt
-#
+# 
 # Finally, start jupyter:
 #     $ jupyter notebook
 #
@@ -22,7 +22,7 @@
 jupyter==1.0.0
 matplotlib==1.5.3
 numexpr==2.6.1
-numpy==1.11.2
+numpy==1.12.0
 pandas==0.19.1
 Pillow==3.4.2
 protobuf==3.0.0
@@ -30,53 +30,15 @@ psutil==5.0.0
 scikit-learn==0.18.1
 scipy==0.18.1
 sympy==1.0
+tensorflow==0.12.1
 
 # Optional: OpenAI gym is only needed for the Reinforcement Learning chapter.
 # There are a few dependencies you need to install first, check out:
 # https://github.com/openai/gym#installing-everything
-#gym==0.5.4
-#atari-py==0.0.18
+#gym[all]==0.5.4
+# If you only want to install the Atari dependency, uncomment this line instead:
+#gym[atari]==0.5.4
 
 # Optional: these are useful Jupyter extensions, in particular to display
 # the table of contents.
 https://github.com/ipython-contrib/jupyter_contrib_nbextensions/tarball/master
-
-######
-#####
-#### Uncomment only the right version of TensorFlow for your system
-###  (default is Python 3.5, Ubuntu/Linux 64-bit, CPU only)
-##
-
-# For GPU versions, requires CUDA toolkit 7.5 and CuDNN v5.
-# See https://www.tensorflow.org/versions/master/get_started/os_setup.html
-
-# Ubuntu/Linux 64-bit, CPU only, Python 2.7
-#https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-0.11.0-cp27-none-linux_x86_64.whl
-
-# Ubuntu/Linux 64-bit, GPU enabled, Python 2.7
-#https://storage.googleapis.com/tensorflow/linux/gpu/tensorflow-0.11.0-cp27-none-linux_x86_64.whl
-
-# Mac OS X, CPU only, Python 2.7:
-#https://storage.googleapis.com/tensorflow/mac/cpu/tensorflow-0.11.0-py2-none-any.whl
-
-# Mac OS X, GPU enabled, Python 2.7:
-#https://storage.googleapis.com/tensorflow/mac/gpu/tensorflow-0.11.0-py2-none-any.whl
-
-# Ubuntu/Linux 64-bit, CPU only, Python 3.4
-#https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-0.11.0-cp34-cp34m-linux_x86_64.whl
-
-# Ubuntu/Linux 64-bit, GPU enabled, Python 3.4
-#https://storage.googleapis.com/tensorflow/linux/gpu/tensorflow-0.11.0-cp34-cp34m-linux_x86_64.whl
-
-# Ubuntu/Linux 64-bit, CPU only, Python 3.5
-https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-0.11.0-cp35-cp35m-linux_x86_64.whl
-
-# Ubuntu/Linux 64-bit, GPU enabled, Python 3.5
-#https://storage.googleapis.com/tensorflow/linux/gpu/tensorflow-0.11.0-cp35-cp35m-linux_x86_64.whl
-
-# Mac OS X, CPU only, Python 3.4 or 3.5:
-#https://storage.googleapis.com/tensorflow/mac/cpu/tensorflow-0.11.0-py3-none-any.whl
-
-# Mac OS X, GPU enabled, Python 3.4 or 3.5:
-#https://storage.googleapis.com/tensorflow/mac/gpu/tensorflow-0.11.0-py3-none-any.whl
-

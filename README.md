@@ -34,9 +34,7 @@ If you want an isolated environment (recommended), you can use [virtualenv](http
     $ virtualenv env
     $ source ./env/bin/activate
 
-There are different packages for TensorFlow, depending on your platform. Please edit `requirements.txt` and make sure only the right one for your platform is uncommented. Default is Python 3.5, Ubuntu/Linux 64-bits, CPU-only.
-
-Also, if you want to go through chapter 16 on Reinforcement Learning, you will need to [install OpenAI gym](https://gym.openai.com/docs) and its dependencies for Atari simulations.
+If you want to go through chapter 16 on Reinforcement Learning, you will need to [install OpenAI gym](https://gym.openai.com/docs) and its dependencies for Atari simulations.
 
 Then make sure pip is up to date, and use it to install the required python packages:
 
@@ -45,7 +43,7 @@ Then make sure pip is up to date, and use it to install the required python pack
 
 If you prefer to use [Anaconda](https://www.continuum.io/), you can run the following commands instead:
 
-    $ conda install -c jjhelmus tensorflow=0.10.0
+    $ conda install -c jjhelmus tensorflow=0.12.0rc0
     $ conda install -c conda-forge jupyter_contrib_nbextensions
 
 If you want to install the Jupyter extensions, run the following command:
