@@ -35,7 +35,7 @@ tensorflow==1.0.0
 # Optional: OpenAI gym is only needed for the Reinforcement Learning chapter.
 # There are a few dependencies you need to install first, check out:
 # https://github.com/openai/gym#installing-everything
-gym[all]==0.5.4
+#gym[all]==0.5.4
 # If you only want to install the Atari dependency, uncomment this line instead:
 #gym[atari]==0.5.4
 
