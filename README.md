@@ -1,8 +1,6 @@
 Machine Learning Notebooks
 ==========================
 
-[![Gitter](https://badges.gitter.im/ageron/handson-ml.svg)](https://gitter.im/ageron/handson-ml?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge) [![Binder](http://mybinder.org/badge.svg)](http://mybinder.org/repo/ageron/handson-ml)
-
 This project aims at teaching you the fundamentals of Machine Learning in
 python. It contains the example code and solutions to the exercises in my O'Reilly book [Hands-on Machine Learning with Scikit-Learn and TensorFlow](http://shop.oreilly.com/product/0636920052289.do):
 
@@ -10,16 +8,12 @@ python. It contains the example code and solutions to the exercises in my O'Reil
 
 Simply open the [Jupyter](http://jupyter.org/) notebooks you are interested in:
 
-* using Binder (recommended): [launch binder](http://mybinder.org/repo/ageron/handson-ml)
-    * no installation needed, you can immediately experiment with the code examples
-* or using [jupyter.org's notebook viewer](http://nbviewer.jupyter.org/github/ageron/handson-ml/blob/master/index.ipynb)
+* Using [jupyter.org's notebook viewer](http://nbviewer.jupyter.org/github/ageron/handson-ml/blob/master/index.ipynb)
     * note: [github.com's notebook viewer](https://github.com/ageron/handson-ml/blob/master/index.ipynb) also works but it is slower and the math formulas are not displayed correctly
 * or by cloning this repository and running Jupyter locally
     * if you prefer this option, follow the installation instructions below.
 
 # Installation
-
-No installation is required, just click the *launch binder* button above, this creates a new VM with everything you need already preinstalled, so you'll be good to go in a just a few seconds! But if you insist, here's how to install these notebooks on your own system.
 
 Obviously, you will need [git](https://git-scm.com/) and [python](https://www.python.org/downloads/) (python 3 is recommended, but python 2 should work as well).
 
