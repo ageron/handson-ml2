@@ -43,7 +43,7 @@ Then make sure pip is up to date, and use it to install the required python pack
 
 If you prefer to use [Anaconda](https://www.continuum.io/), you can run the following commands instead:
 
-    $ conda install -c jjhelmus tensorflow=0.12.0rc0
+    $ conda install -c conda-forge tensorflow=1.0.0
     $ conda install -c conda-forge jupyter_contrib_nbextensions
 
 If you want to install the Jupyter extensions, run the following command:
