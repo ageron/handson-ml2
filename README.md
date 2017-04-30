@@ -9,7 +9,7 @@ python. It contains the example code and solutions to the exercises in my O'Reil
 Simply open the [Jupyter](http://jupyter.org/) notebooks you are interested in:
 
 * Using [jupyter.org's notebook viewer](http://nbviewer.jupyter.org/github/ageron/handson-ml/blob/master/index.ipynb)
-    * note: [github.com's notebook viewer](https://github.com/ageron/handson-ml/blob/master/index.ipynb) also works but it is slower and the math formulas are not displayed correctly
+    * note: [github.com's notebook viewer](https://github.com/ageron/handson-ml/blob/master/index.ipynb) also works but it is slower and the math formulas are not displayed correctly,
 * or by cloning this repository and running Jupyter locally. This option lets you play around with the code. In this case, follow the installation instructions below.
 
 # Installation
@@ -32,17 +32,17 @@ Of course, you obviously need Python. Python 2 is already preinstalled on most s
     $ python --version   # for Python 2
     $ python3 --version  # for Python 3
 
-Any Python 3 version should be fine, preferably ≥3.5, as well as Python ≥2.6. However, if you don't have Python 3, I recommend installing it (Python 2 should work, but it is deprecated so Python 3 is preferable). To do so, you have several options: on Windows or MacOSX, you can just download it from [python.org](https://www.python.org/downloads/). On MacOSX, you can alternatively use [MacPorts](https://www.macports.org/) or [Homebrew](https://brew.sh/). On Linux, unless you know what you are doing, you should use your system's packaging system. For example, on Debian or Ubuntu, type:
+Any Python 3 version should be fine, preferably ≥3.5. If you don't have Python 3, I recommend installing it (Python ≥2.6 should work, but it is deprecated so Python 3 is preferable). To do so, you have several options: on Windows or MacOSX, you can just download it from [python.org](https://www.python.org/downloads/). On MacOSX, you can alternatively use [MacPorts](https://www.macports.org/) or [Homebrew](https://brew.sh/). On Linux, unless you know what you are doing, you should use your system's packaging system. For example, on Debian or Ubuntu, type:
 
     $ sudo apt-get update
     $ sudo apt-get install python3
 
 Another option is to download and install [Anaconda](https://www.continuum.io/downloads). This is a package that includes both Python and many scientific libraries. You should prefer the Python 3 version.
 
-If you choose to use Anaconda, read the next section, or else you can skip it.
+If you choose to use Anaconda, read the next section, or else jump to the [Using pip](#using-pip) section.
 
 ## Using Anaconda
-When using Anaconda, you can optionally create an isolated Python environment dedicated to this project. This is recommended as it makes it possible to have a different environment for each project (e.g. one for this propject), with potentially different libraries and library versions:
+When using Anaconda, you can optionally create an isolated Python environment dedicated to this project. This is recommended as it makes it possible to have a different environment for each project (e.g. one for this project), with potentially different libraries and library versions:
 
     $ conda create -n mlbook python=3.5 anaconda
     $ source activate mlbook
@@ -53,7 +53,7 @@ This creates a fresh Python 3.5 environment called `mlbook` (you can change the 
 
 This installs TensorFlow 1.0.0 in the `mlbook` environment (fetching it from the `conda-forge` repository). If you chose not to create an `mlbook` environment, then just remove the `-n mlbook` option.
 
-Next, you can optionally install Jupyter extensions. These are useful to have nice table of contents in the notebooks, but they are not required.
+Next, you can optionally install Jupyter extensions. These are useful to have nice tables of contents in the notebooks, but they are not required.
 
     $ conda install -n mlbook -c conda-forge jupyter_contrib_nbextensions
 
@@ -70,25 +70,25 @@ First you need to make sure you have the latest version of pip installed:
 
 The `--user` option will install the latest version of pip only for the current user. If you prefer to install it system wide (i.e. for all users), you must have administrator rights (e.g. use `sudo pip3` instead of `pip3` on Linux), and you should remove the `--user` option. The same is true of the command below that uses the `--user` option.
 
-Next, you can optionally create an isolated environment. As explained above, this is recommended as it makes it possible to have a different environment for each project (e.g. one for this course), with potentially very different libraries, and different versions:
+Next, you can optionally create an isolated environment. This is recommended as it makes it possible to have a different environment for each project (e.g. one for this project), with potentially very different libraries, and different versions:
 
     $ pip3 install --user --upgrade virtualenv
     $ virtualenv -p `which python3` env
 
-This creates a new directory called `env` in the current directory, containing an isolated Python environment based on Python 3. If you installed multiple versions of Python 3 on your system, you can replace \``which python3`\` with the path to the Python executable you prefer to use.
+This creates a new directory called `env` in the current directory, containing an isolated Python environment based on Python 3. If you installed multiple versions of Python 3 on your system, you can replace `` `which python3` `` with the path to the Python executable you prefer to use.
 
-Now you want to activate this environment. You will need to run this command every time you want to use this environment.
+Now you must activate this environment. You will need to run this command every time you want to use this environment.
 
     $ source ./env/bin/activate
 
-Next, use pip to install the required python packages. If you are not using virtualenv, you should add the `--user` option (or else you will probably need administrator rights, e.g. using `sudo pip3` instead of `pip3` on Linux).
+Next, use pip to install the required python packages. If you are not using virtualenv, you should add the `--user` option (alternatively you could install the libraries system-wide, but this will probably require administrator rights, e.g. using `sudo pip3` instead of `pip3` on Linux).
 
     $ pip3 install --upgrade -r requirements.txt
 
 Great! You're all set, you just need to start Jupyter now.
 
 ## Starting Jupyter
-If you want to use the Jupyter extensions (optional), you first need to install them:
+If you want to use the Jupyter extensions (optional, they are mainly useful to have nice tables of contents), you first need to install them:
 
     $ jupyter contrib nbextension install --user
 
