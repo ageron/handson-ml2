@@ -8,5 +8,5 @@ exec:
 build: stop .FORCE
 	docker-compose build --force-rm 
 stop:
-	docker stop handson-ml || true
+	docker stop handson-ml || true; docker rm handson-ml || true;
 .FORCE:
