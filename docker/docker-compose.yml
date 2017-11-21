@@ -1,0 +1,17 @@
+version: "3"
+services:
+  handson-ml:
+    build: 
+      context: ../
+      dockerfile: ./docker/Dockerfile
+    container_name: handson-ml
+    image: handson-ml
+    logging:
+      driver: json-file
+      options:
+        max-size: 50m
+    ports:
+      - "8888:8888"
+    volumes:
+      - ../:/usr/src/project
+    command: /opt/conda/bin/jupyter notebook --ip='*' --port=8888 --no-browser --allow-root
