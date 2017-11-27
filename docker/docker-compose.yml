@@ -1,9 +1,11 @@
 version: "3"
 services:
   handson-ml:
-    build: 
+    build:
       context: ../
       dockerfile: ./docker/Dockerfile
+      args:
+        - username=devel
     container_name: handson-ml
     image: handson-ml
     logging:
@@ -13,5 +15,5 @@ services:
     ports:
       - "8888:8888"
     volumes:
-      - ../:/usr/src/project
-    command: /opt/conda/bin/jupyter notebook --ip='*' --port=8888 --no-browser --allow-root
+      - ../:/home/devel/handson-ml
+    command: /opt/conda/bin/jupyter notebook --ip='*' --port=8888 --no-browser
