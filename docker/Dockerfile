@@ -41,25 +41,17 @@ RUN mkdir -p ${HOME}/.jupyter && \
 	>> ${HOME}/.jupyter/jupyter_notebook_config.py
 
 
-# INFO: Below - work in progress, nbdime not totally integrated, still:
-# 1. enables diffing notebooks via nbdiff after connecting to container by "make exec" (docker exec)
+# INFO: Below - work in progress, nbdime not totally integrated, still it enables diffing
+#       notebooks via nbdiff after connecting to container by "make exec" (docker exec)
 #  Use:
 #      nbd NOTEBOOK_NAME.ipynb
 #    to get nbdiff between checkpointed version and current version of the given notebook
-# 2. allows decision tree visualization in notebook
-#  Use:
-#      from sklearn import tree
-#      from graphviz import Source
-#      Source(tree.export_graphviz(tree_clf, out_file=None, feature_names=iris.feature_names[2:]))
-
 USER root
 WORKDIR /
-
 RUN conda install -y -c conda-forge nbdime
-RUN conda install -y -c conda-forge python-graphviz
-
 USER ${username}
 WORKDIR ${HOME}/handson-ml
+
 
 COPY docker/bashrc /tmp/bashrc
 RUN cat /tmp/bashrc >> ${HOME}/.bashrc
