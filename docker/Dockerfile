@@ -13,8 +13,9 @@ RUN conda install -y -c conda-forge \
 		jupyter_contrib_nbextensions
 
 ARG username
+ARG userid
 
-RUN adduser ${username} --gecos '' --disabled-password && \
+RUN adduser ${username} --uid ${userid} --gecos '' --disabled-password && \
 	echo "${username} ALL=(root) NOPASSWD:ALL" > /etc/sudoers.d/${username} && \
 	chmod 0440 /etc/sudoers.d/${username}
 

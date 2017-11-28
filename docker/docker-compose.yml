@@ -6,6 +6,7 @@ services:
       dockerfile: ./docker/Dockerfile
       args:
         - username=devel
+        - userid=1000
     container_name: handson-ml
     image: handson-ml
     logging:
