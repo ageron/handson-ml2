@@ -1,4 +1,4 @@
-alias ll="ls -l"
+alias ll="ls -alF"
 
 nbd() {
 	DIRNAME=$(dirname "$1")
@@ -8,5 +8,5 @@ nbd() {
 	CHECKPOINT_COPY=$DIRNAME/.ipynb_checkpoints/$BASENAME-checkpoint.ipynb
 
 	# echo "How change $CHECKPOINT_COPY into $WORKING_COPY"
-	nbdiff "$CHECKPOINT_COPY" "$WORKING_COPY"
+	nbdiff "$CHECKPOINT_COPY" "$WORKING_COPY" --ignore-details
 }
