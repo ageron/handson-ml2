@@ -53,14 +53,14 @@ RUN git-nbdiffdriver config --enable --global
 RUN git config --global diff.jupyternotebook.command 'git-nbdiffdriver diff --ignore-details'
 
 
-# INFO: Dirty nbdime patching
+# INFO: Dirty nbdime patching (ignored if not matching)
 COPY docker/nbdime-*.patch /tmp/
 USER root
 WORKDIR /
 RUN patch -d /opt/conda/lib/python3.6/site-packages -p1 --forward --reject-file=- < \
-		/tmp/nbdime-1-details.patch \
+		/tmp/nbdime-2-toc.patch || true \
 	&& patch -d /opt/conda/lib/python3.6/site-packages -p1 --forward --reject-file=- < \
-		/tmp/nbdime-2-toc.patch
+		/tmp/nbdime-2-toc.patch || true
 RUN rm /tmp/nbdime-*.patch
 USER ${username}
 WORKDIR ${workdir}
