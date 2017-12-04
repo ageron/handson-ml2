@@ -9,19 +9,18 @@ RUN apt-get update && apt-get upgrade -y \
 	&& rm -rf /var/lib/apt/lists/*
 
 RUN conda install -y -c conda-forge \
-		tensorflow=1.0.0 \
+		tensorflow \
 		jupyter_contrib_nbextensions
 
 ARG username
 ARG userid
 
+ARG home=/home/${username}
+ARG workdir=${home}/handson-ml
+
 RUN adduser ${username} --uid ${userid} --gecos '' --disabled-password \
 	&& echo "${username} ALL=(root) NOPASSWD:ALL" > /etc/sudoers.d/${username} \
 	&& chmod 0440 /etc/sudoers.d/${username}
-
-ENV HOME /home/${username}
-
-ARG workdir=${HOME}/handson-ml
 
 WORKDIR ${workdir}
 RUN chown ${username}:${username} ${workdir}
@@ -58,7 +57,7 @@ COPY docker/nbdime-*.patch /tmp/
 USER root
 WORKDIR /
 RUN patch -d /opt/conda/lib/python3.6/site-packages -p1 --forward --reject-file=- < \
-		/tmp/nbdime-2-toc.patch || true \
+		/tmp/nbdime-1-details.patch || true \
 	&& patch -d /opt/conda/lib/python3.6/site-packages -p1 --forward --reject-file=- < \
 		/tmp/nbdime-2-toc.patch || true
 RUN rm /tmp/nbdime-*.patch
@@ -67,7 +66,7 @@ WORKDIR ${workdir}
 
 
 COPY docker/bashrc /tmp/bashrc
-RUN cat /tmp/bashrc >> ${HOME}/.bashrc
+RUN cat /tmp/bashrc >> ${home}/.bashrc
 RUN sudo rm /tmp/bashrc
 
 # INFO: Uncomment the RUN command below to disable git diff paging
@@ -81,6 +80,6 @@ RUN sudo rm /tmp/bashrc
 #          from notebook.auth import passwd
 #          passwd()
 #       and take the hash from the output
-#RUN mkdir -p ${HOME}/.jupyter && \
+#RUN mkdir -p ${home}/.jupyter && \
 #	echo 'c.NotebookApp.password = u"sha1:c6bbcba2d04b:f969e403db876dcfbe26f47affe41909bd53392e"' \
-#	>> ${HOME}/.jupyter/jupyter_notebook_config.py
+#	>> ${home}/.jupyter/jupyter_notebook_config.py

@@ -32,7 +32,9 @@ You can close the server just by pressing `Ctrl-C` in terminal window.
 
 Run `make exec` (or `docker-compose exec handson-ml bash`) while the server is running to run an additional `bash` shell inside the `handson-ml` container. Now you're inside the environment prepared within the image.
 
-One of the usefull things that can be done there may be comparing versions of the notebooks using the `nbdiff` command if you haven't got `nbdime` installed locally (it is **way** better than plain `diff` for notebooks). See [Tools for diffing and merging of Jupyter notebooks](https://github.com/jupyter/nbdime) for more details.
+One of the usefull things that can be done there would be starting TensorBoard (for example with simple `tb` command, see bashrc file).
+
+Another one may be comparing versions of the notebooks using the `nbdiff` command if you haven't got `nbdime` installed locally (it is **way** better than plain `diff` for notebooks). See [Tools for diffing and merging of Jupyter notebooks](https://github.com/jupyter/nbdime) for more details.
 
 You can see changes you made relative to the version in git using `git diff` which is integrated with `nbdiff`.
 

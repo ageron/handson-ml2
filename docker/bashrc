@@ -10,3 +10,9 @@ nbd() {
 	# echo "How change $CHECKPOINT_COPY into $WORKING_COPY"
 	nbdiff "$CHECKPOINT_COPY" "$WORKING_COPY" --ignore-details
 }
+
+tb() {
+	python -m tensorboard.main --logdir=tf_logs
+}
+
+alias tensorboard="python -m tensorboard.main"
