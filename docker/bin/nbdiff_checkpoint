@@ -1,0 +1,9 @@
+#!/bin/bash
+DIRNAME=$(dirname "$1")
+BASENAME=$(basename "$1" .ipynb)
+
+WORKING_COPY=$DIRNAME/$BASENAME.ipynb
+CHECKPOINT_COPY=$DIRNAME/.ipynb_checkpoints/$BASENAME-checkpoint.ipynb
+
+echo "How change $CHECKPOINT_COPY into $WORKING_COPY"
+nbdiff "$CHECKPOINT_COPY" "$WORKING_COPY" --ignore-details

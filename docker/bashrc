@@ -1,18 +1,3 @@
 alias ll="ls -alF"
-
-nbd() {
-	DIRNAME=$(dirname "$1")
-	BASENAME=$(basename "$1" .ipynb)
-
-	WORKING_COPY=$DIRNAME/$BASENAME.ipynb
-	CHECKPOINT_COPY=$DIRNAME/.ipynb_checkpoints/$BASENAME-checkpoint.ipynb
-
-	# echo "How change $CHECKPOINT_COPY into $WORKING_COPY"
-	nbdiff "$CHECKPOINT_COPY" "$WORKING_COPY" --ignore-details
-}
-
-tb() {
-	python -m tensorboard.main --logdir=tf_logs
-}
-
-alias tensorboard="python -m tensorboard.main"
+alias nbd="nbdiff_checkpoint"
+alias tb="tensorboard --logdir=tf_logs"

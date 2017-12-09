@@ -67,6 +67,7 @@ WORKDIR ${workdir}
 
 COPY docker/bashrc /tmp/bashrc
 RUN cat /tmp/bashrc >> ${home}/.bashrc
+RUN echo "export PATH=\"${workdir}/docker/bin:$PATH\"" >> ${home}/.bashrc
 RUN sudo rm /tmp/bashrc
 
 # INFO: Uncomment the RUN command below to disable git diff paging
