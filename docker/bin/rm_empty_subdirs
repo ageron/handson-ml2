@@ -40,7 +40,7 @@ def remove_empty_directories(initial_dir,
 def main():
     import argparse
     parser = argparse.ArgumentParser(description="Remove empty directories recursively in subtree.")
-    parser.add_argument("dir", metavar="DIR", type=str, nargs="*", default=".", help="directory to be searched")
+    parser.add_argument("dir", metavar="DIR", type=str, nargs="+", help="directory to be searched")
     parser.add_argument("-r", "--allow-dir-removal", action="store_true", help="allow deletion of DIR itself")
     parser.add_argument("-i", "--ignore-nonexistent-dir", action="store_true", help="don't throw an error if DIR doesn't exist")
     parser.add_argument("-d", "--dry-run", action="store_true", help="only print messages, don't perform any removals")
