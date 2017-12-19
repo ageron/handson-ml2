@@ -109,3 +109,6 @@ This should open up your browser, and you should see Jupyter's tree view, with t
 Note: you can also visit [http://localhost:8888/nbextensions](http://localhost:8888/nbextensions) to activate and configure Jupyter extensions.
 
 Congrats! You are ready to learn Machine Learning, hands on!
+
+# Contributors
+I would like to thank everyone who contributed to this project, either by providing useful feedback, filing issues or submitting Pull Requests. Special thanks go to Steven Bunkley and Ziembla who created the `docker` directory.
