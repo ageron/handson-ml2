@@ -1,0 +1,17 @@
+--- a/nbdime/diffing/notebooks.py
++++ b/nbdime/diffing/notebooks.py
+@@ -548,8 +548,12 @@ def set_notebook_diff_targets(sources=True, outputs=True, attachments=True, meta
+     metadata_keys = ("/cells/*/metadata", "/metadata", "/cells/*/outputs/*/metadata")
+     if metadata:
+         for key in metadata_keys:
+-            if key in notebook_differs:
+-                del notebook_differs[key]
++            if details:
++                if key in notebook_differs:
++                    del notebook_differs[key]
++            else:
++                notebook_differs[key] = diff_ignore_keys(
++                    inner_differ=diff, ignore_keys=['collapsed', 'autoscroll', 'deletable', 'editable'])
+     else:
+         for key in metadata_keys:
+             notebook_differs[key] = diff_ignore
