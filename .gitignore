@@ -11,3 +11,5 @@ my_*
 datasets/words
 datasets/flowers
 datasets/spam
+*.gz
+datasets/mnist/train-labels-idx1-ubyte
