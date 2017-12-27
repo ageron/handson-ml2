@@ -15,6 +15,7 @@ services:
         max-size: 50m
     ports:
       - "8888:8888"
+      - "6006:6006"
     volumes:
       - ../:/home/devel/handson-ml
     command: /opt/conda/bin/jupyter notebook --ip='*' --port=8888 --no-browser

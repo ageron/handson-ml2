@@ -1,0 +1,54 @@
+#!/usr/bin/env python
+
+import os
+
+def remove_empty_directories(initial_dir,
+    allow_initial_delete=False, ignore_nonexistant_initial=False,
+    dry_run=False, quiet=False):
+
+    FORBIDDEN_SUBDIRS = set([".git"])
+
+    if not os.path.isdir(initial_dir) and not ignore_nonexistant_initial:
+        raise RuntimeError("Initial directory '{}' not found!".format(initial_dir))
+
+    message = "removed"
+    if dry_run:
+        message = "to be " + message
+
+    deleted = set()
+
+    for (directory, subdirs, files) in os.walk(initial_dir, topdown=False):
+        forbidden = False
+        parent = directory
+        while parent:
+            parent, dirname = os.path.split(parent)
+            if dirname in FORBIDDEN_SUBDIRS:
+                forbidden = True
+                break
+        if forbidden:
+            continue
+
+        is_empty = len(files) < 1 and len(set([os.path.join(directory, s) for s in subdirs]) - deleted) < 1
+
+        if is_empty and (initial_dir != directory or allow_initial_delete):
+            if not quiet:
+                print("{}: {}".format(message, directory))
+            deleted.add(directory)
+            if not dry_run:
+                os.rmdir(directory)
+
+def main():
+    import argparse
+    parser = argparse.ArgumentParser(description="Remove empty directories recursively in subtree.")
+    parser.add_argument("dir", metavar="DIR", type=str, nargs="+", help="directory to be searched")
+    parser.add_argument("-r", "--allow-dir-removal", action="store_true", help="allow deletion of DIR itself")
+    parser.add_argument("-i", "--ignore-nonexistent-dir", action="store_true", help="don't throw an error if DIR doesn't exist")
+    parser.add_argument("-d", "--dry-run", action="store_true", help="only print messages, don't perform any removals")
+    parser.add_argument("-q", "--quiet", action="store_true", help="don't print names of directories being removed")
+    args = parser.parse_args()
+    for directory in args.dir:
+        remove_empty_directories(directory, args.allow_dir_removal, args.ignore_nonexistent_dir,
+            args.dry_run, args.quiet)
+
+if __name__ == "__main__":
+    main()
