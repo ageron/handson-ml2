@@ -8,6 +8,7 @@ RUN apt-get update && apt-get upgrade -y \
         sudo \
     && rm -rf /var/lib/apt/lists/*
 
+RUN conda update -n base conda
 RUN conda install -y -c conda-forge \
         tensorflow \
         jupyter_contrib_nbextensions
