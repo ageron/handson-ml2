@@ -6,12 +6,15 @@ RUN apt-get update && apt-get upgrade -y \
         build-essential \
         git \
         sudo \
+        cmake zlib1g-dev libjpeg-dev xvfb libav-tools xorg-dev libboost-all-dev libsdl2-dev swig \
     && rm -rf /var/lib/apt/lists/*
 
 RUN conda update -n base conda
 RUN conda install -y -c conda-forge \
         tensorflow \
-        jupyter_contrib_nbextensions
+        jupyter_contrib_nbextensions \
+        pyopengl
+RUN pip install "gym[atari,box2d,classic_control]"
 
 ARG username
 ARG userid
