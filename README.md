@@ -32,7 +32,11 @@ Of course, you obviously need Python. Python 2 is already preinstalled on most s
     $ python --version   # for Python 2
     $ python3 --version  # for Python 3
 
-Any Python 3 version should be fine, preferably ≥3.5. If you don't have Python 3, I recommend installing it (Python ≥2.6 should work, but it is deprecated so Python 3 is preferable). To do so, you have several options: on Windows or MacOSX, you can just download it from [python.org](https://www.python.org/downloads/). On MacOSX, you can alternatively use [MacPorts](https://www.macports.org/) or [Homebrew](https://brew.sh/). On Linux, unless you know what you are doing, you should use your system's packaging system. For example, on Debian or Ubuntu, type:
+Any Python 3 version should be fine, preferably ≥3.5. If you don't have Python 3, I recommend installing it (Python ≥2.6 should work, but it is deprecated so Python 3 is preferable). To do so, you have several options: on Windows or MacOSX, you can just download it from [python.org](https://www.python.org/downloads/). On MacOSX, you can alternatively use [MacPorts](https://www.macports.org/) or [Homebrew](https://brew.sh/). If you are using Python 3.6 on MacOSX, you need to run the following command to install the `certifi` package of certificates because Python 3.6 on MacOSX has no certificates to validate SSL connections (see this [StackOverflow question](https://stackoverflow.com/questions/27835619/urllib-and-ssl-certificate-verify-failed-error)):
+
+    $ /Applications/Python\ 3.6/Install\ Certificates.command
+
+On Linux, unless you know what you are doing, you should use your system's packaging system. For example, on Debian or Ubuntu, type:
 
     $ sudo apt-get update
     $ sudo apt-get install python3
@@ -49,9 +53,9 @@ When using Anaconda, you can optionally create an isolated Python environment de
 
 This creates a fresh Python 3.5 environment called `mlbook` (you can change the name if you want to), and it activates it. This environment contains all the scientific libraries that come with Anaconda. This includes all the libraries we will need (NumPy, Matplotlib, Pandas, Jupyter and a few others), except for TensorFlow, so let's install it:
 
-    $ conda install -n mlbook -c conda-forge tensorflow=1.0.0
+    $ conda install -n mlbook -c conda-forge tensorflow=1.4.0
 
-This installs TensorFlow 1.0.0 in the `mlbook` environment (fetching it from the `conda-forge` repository). If you chose not to create an `mlbook` environment, then just remove the `-n mlbook` option.
+This installs TensorFlow 1.4.0 in the `mlbook` environment (fetching it from the `conda-forge` repository). If you chose not to create an `mlbook` environment, then just remove the `-n mlbook` option.
 
 Next, you can optionally install Jupyter extensions. These are useful to have nice tables of contents in the notebooks, but they are not required.
 
@@ -105,3 +109,6 @@ This should open up your browser, and you should see Jupyter's tree view, with t
 Note: you can also visit [http://localhost:8888/nbextensions](http://localhost:8888/nbextensions) to activate and configure Jupyter extensions.
 
 Congrats! You are ready to learn Machine Learning, hands on!
+
+# Contributors
+I would like to thank everyone who contributed to this project, either by providing useful feedback, filing issues or submitting Pull Requests. Special thanks go to Steven Bunkley and Ziembla who created the `docker` directory.
