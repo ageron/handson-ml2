@@ -13,6 +13,8 @@
 #
 # Next, optionally uncomment the OpenAI gym lines (see below).
 # If you do, make sure to install the dependencies first.
+# If you are interested in xgboost for high performance Gradient Boosting, you
+# should uncomment the xgboost line (used in the ensemble learning notebook).
 #
 # Then install these requirements:
 #     $ pip install --upgrade -r requirements.txt
@@ -25,27 +27,33 @@
 ##### Core scientific packages
 jupyter==1.0.0
 matplotlib==2.2.2
-numpy==1.14.2
+numpy==1.14.3
 pandas==0.22.0
-scipy==1.0.1
-
-# Optional: these are useful Jupyter extensions, in particular to display
-# the table of contents.
-jupyter-contrib-nbextensions==0.5.0
+scipy==1.1.0
 
 
 ##### Machine Learning packages
 scikit-learn==0.19.1
 
+# Optional: the XGBoost library is only used in the ensemble learning chapter.
+#xgboost==0.71
+
 
 ##### Deep Learning packages
 
-# Replace tensorflow with tensorflow-gpu if you want GPU support.
-# You also need to install CUDA, cuDNN and more, see tensorflow.org for the
-# detailed installation instruction.
-tensorflow==1.7.0
+# Replace tensorflow with tensorflow-gpu if you want GPU support. If so,
+# you need a GPU card with CUDA Compute Capability 3.0 or higher support, and
+# you must install CUDA, cuDNN and more: see tensorflow.org for the detailed
+# installation instructions.
+tensorflow==1.8.0
+#tensorflow-gpu==1.8.0
 
-Keras==2.1.5
+# Forcing bleach to 1.5 to avoid version incompatibility when installing
+# TensorBoard.
+bleach==1.5.0
+
+Keras==2.1.6
+
 
 # Optional: OpenAI gym is only needed for the Reinforcement Learning chapter.
 # There are a few dependencies you need to install first, check out:
@@ -55,10 +63,25 @@ Keras==2.1.5
 #gym[atari]==0.10.5
 
 
-##### Extra utilities
-bleach==1.5.0
-nbdime==0.4.1
-numexpr==2.6.4
+##### Image manipulation
+imageio==2.3.0
 Pillow==5.1.0
-psutil==5.4.3
-sympy==1.1.1
+scikit-image==0.13.1
+
+
+##### Extra packages (optional)
+
+# Nice utility to diff Jupyter Notebooks.
+nbdime==0.4.1
+
+# May be useful with Pandas for complex "where" clauses (e.g., Pandas
+# tutorial).
+numexpr==2.6.5
+
+# These libraries can be useful in the classification chapter, exercise 4.
+nltk==3.3
+urlextract==0.8.3
+
+# Optional: these are useful Jupyter extensions, in particular to display
+# the table of contents.
+jupyter-contrib-nbextensions==0.5.0
