@@ -23,7 +23,7 @@ def strip_consts(graph_def, max_const_size=32):
             tensor = n.attr['value'].tensor
             size = len(tensor.tensor_content)
             if size > max_const_size:
-                tensor.tensor_content = "<stripped %d bytes>"%size
+                tensor.tensor_content = b"<stripped %d bytes>"%size
     return strip_def
 
 def show_graph(graph_def, max_const_size=32):
