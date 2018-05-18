@@ -78,10 +78,15 @@ nbdime==0.4.1
 # tutorial).
 numexpr==2.6.5
 
-# These libraries can be useful in the classification chapter, exercise 4.
+# Optional: these libraries can be useful in the classification chapter,
+# exercise 4.
 nltk==3.3
 urlextract==0.8.3
 
-# Optional: these are useful Jupyter extensions, in particular to display
-# the table of contents.
+# Optional: this extension is handy to easily start/stop tensorboard
+# server(s) directly from Jupyter.
+jupyter-tensorboard==0.1.6
+
+# Optional: these are useful Jupyter extensions, in particular to display the
+# table of contents
 jupyter-contrib-nbextensions==0.5.0
