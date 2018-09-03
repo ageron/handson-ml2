@@ -87,6 +87,10 @@ Now you must activate this environment. You will need to run this command every 
 
     $ source ./env/bin/activate
 
+On Windows, the command is slightly different:
+
+    $ .\env\Scripts\activate
+
 Next, use pip to install the required python packages. If you are not using virtualenv, you should add the `--user` option (alternatively you could install the libraries system-wide, but this will probably require administrator rights, e.g. using `sudo pip3` instead of `pip3` on Linux).
 
     $ pip3 install --upgrade -r requirements.txt
