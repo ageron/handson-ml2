@@ -9,6 +9,7 @@ services:
         - userid=1000
     container_name: handson-ml
     image: handson-ml
+    restart: unless-stopped    
     logging:
       driver: json-file
       options:
