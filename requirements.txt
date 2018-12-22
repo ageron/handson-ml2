@@ -33,7 +33,7 @@ scipy==1.2.0
 
 
 ##### Machine Learning packages
-scikit-learn==0.20.1
+scikit-learn==0.20.2
 
 # Optional: the XGBoost library is only used in the ensemble learning chapter.
 xgboost==0.81
@@ -72,7 +72,7 @@ nbdime==1.0.4
 
 # May be useful with Pandas for complex "where" clauses (e.g., Pandas
 # tutorial).
-numexpr==2.6.8
+numexpr==2.6.9
 
 # Optional: these libraries can be useful in the classification chapter,
 # exercise 4.
