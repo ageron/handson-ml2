@@ -26,17 +26,17 @@
 
 ##### Core scientific packages
 jupyter==1.0.0
-matplotlib==2.2.2
-numpy==1.14.3
-pandas==0.22.0
-scipy==1.1.0
+matplotlib==3.0.2
+numpy==1.15.4
+pandas==0.23.4
+scipy==1.2.0
 
 
 ##### Machine Learning packages
-scikit-learn==0.19.1
+scikit-learn==0.20.1
 
 # Optional: the XGBoost library is only used in the ensemble learning chapter.
-#xgboost==0.71
+xgboost==0.81
 
 
 ##### Deep Learning packages
@@ -45,47 +45,43 @@ scikit-learn==0.19.1
 # you need a GPU card with CUDA Compute Capability 3.0 or higher support, and
 # you must install CUDA, cuDNN and more: see tensorflow.org for the detailed
 # installation instructions.
-tensorflow==1.8.0
-#tensorflow-gpu==1.8.0
-
-# Forcing bleach to 1.5 to avoid version incompatibility when installing
-# TensorBoard.
-bleach==1.5.0
-
-Keras==2.1.6
+tensorflow==1.12.0
+#tensorflow-gpu==1.12.0
+tensorflow-hub==0.2.0
+tensorflow-probability==0.5.0
 
 
 # Optional: OpenAI gym is only needed for the Reinforcement Learning chapter.
 # There are a few dependencies you need to install first, check out:
 # https://github.com/openai/gym#installing-everything
-#gym[all]==0.10.5
+#gym[all]==0.10.9
 # If you only want to install the Atari dependency, uncomment this line instead:
-#gym[atari]==0.10.5
+#gym[atari]==0.10.9
 
 
 ##### Image manipulation
-imageio==2.3.0
-Pillow==5.1.0
-scikit-image==0.13.1
+imageio==2.4.1
+Pillow==5.3.0
+scikit-image==0.14.1
 
 
 ##### Extra packages (optional)
 
 # Nice utility to diff Jupyter Notebooks.
-nbdime==0.4.1
+nbdime==1.0.4
 
 # May be useful with Pandas for complex "where" clauses (e.g., Pandas
 # tutorial).
-numexpr==2.6.5
+numexpr==2.6.8
 
 # Optional: these libraries can be useful in the classification chapter,
 # exercise 4.
-nltk==3.3
+nltk==3.4
 urlextract==0.8.3
 
 # Optional: this extension is handy to easily start/stop tensorboard
 # server(s) directly from Jupyter.
-jupyter-tensorboard==0.1.6
+jupyter-tensorboard==0.1.8
 
 # Optional: these are useful Jupyter extensions, in particular to display the
 # table of contents
