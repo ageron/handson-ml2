@@ -2,27 +2,29 @@ Machine Learning Notebooks
 ==========================
 
 This project aims at teaching you the fundamentals of Machine Learning in
-python. It contains the example code and solutions to the exercises in my O'Reilly book [Hands-on Machine Learning with Scikit-Learn and TensorFlow](http://shop.oreilly.com/product/0636920052289.do):
+python. It contains the example code and solutions to the exercises in the second edition of my O'Reilly book [Hands-on Machine Learning with Scikit-Learn, Keras and TensorFlow](https://www.oreilly.com/library/view/hands-on-machine-learning/9781492032632/):
 
-[![book](http://akamaicovers.oreilly.com/images/0636920052289/cat.gif)](http://shop.oreilly.com/product/0636920052289.do)
+<img src="https://images-na.ssl-images-amazon.com/images/I/51tOhPQBmSL._SX379_BO1,204,203,200_.jpg" title="book" width="150" />
+
+**Note**: If you are looking for the first edition notebooks, check out [ageron/handson-ml](https://github.com/ageron/handson-ml).
 
 Simply open the [Jupyter](http://jupyter.org/) notebooks you are interested in:
 
-* Using [jupyter.org's notebook viewer](http://nbviewer.jupyter.org/github/ageron/handson-ml/blob/master/index.ipynb)
-    * note: [github.com's notebook viewer](https://github.com/ageron/handson-ml/blob/master/index.ipynb) also works but it is slower and the math formulas are not displayed correctly,
+* Using [jupyter.org's notebook viewer](http://nbviewer.jupyter.org/github/ageron/handson-ml2/blob/master/index.ipynb)
+    * note: [github.com's notebook viewer](https://github.com/ageron/handson-ml2/blob/master/index.ipynb) also works but it is slower and the math formulas are not displayed correctly,
 * or by cloning this repository and running Jupyter locally. This option lets you play around with the code. In this case, follow the installation instructions below.
 
 # Installation
 
 First, you will need to install [git](https://git-scm.com/), if you don't have it already.
 
-Next, clone this repository by opening a terminal and typing the following commands:
+Next, clone this repository by opening a terminal and typing the following commands (do not type the `$` signs, they just indicate that this is a terminal command):
 
     $ cd $HOME  # or any other development directory you prefer
-    $ git clone https://github.com/ageron/handson-ml.git
-    $ cd handson-ml
+    $ git clone https://github.com/ageron/handson-ml2.git
+    $ cd handson-ml2
 
-If you do not want to install git, you can instead download [master.zip](https://github.com/ageron/handson-ml/archive/master.zip), unzip it, rename the resulting directory to `handson-ml` and move it to your development directory.
+If you do not want to install git, you can instead download [master.zip](https://github.com/ageron/handson-ml2/archive/master.zip), unzip it, rename the resulting directory to `handson-ml2` and move it to your development directory.
 
 If you want to go through chapter 16 on Reinforcement Learning, you will need to [install OpenAI gym](https://gym.openai.com/docs) and its dependencies for Atari simulations.
 
@@ -34,7 +36,7 @@ Of course, you obviously need Python. Python 2 is already preinstalled on most s
     $ python --version   # for Python 2
     $ python3 --version  # for Python 3
 
-Any Python 3 version should be fine, preferably 3.5 or 3.6 (TensorFlow support for Python 3.7 is [coming soon](https://github.com/tensorflow/tensorflow/issues/20517)). If you don't have Python 3, I recommend installing it (Python ≥2.6 should work, but it is deprecated so Python 3 is preferable). To do so, you have several options: on Windows or MacOSX, you can just download it from [python.org](https://www.python.org/downloads/). On MacOSX, you can alternatively use [MacPorts](https://www.macports.org/) or [Homebrew](https://brew.sh/). If you are using Python 3.6 on MacOSX, you need to run the following command to install the `certifi` package of certificates because Python 3.6 on MacOSX has no certificates to validate SSL connections (see this [StackOverflow question](https://stackoverflow.com/questions/27835619/urllib-and-ssl-certificate-verify-failed-error)):
+Any Python 3 version should be fine, preferably 3.5 or 3.6 (TensorFlow support for Python 3.7 is [coming soon](https://github.com/tensorflow/tensorflow/issues/20517)). If you don't have Python 3, I strongly recommend installing it (Python ≥2.6 may work with minor adjustments, but it is deprecated so Python 3 is preferable). To do so, you have several options: on Windows or MacOSX, you can just download it from [python.org](https://www.python.org/downloads/). On MacOSX, you can alternatively use [MacPorts](https://www.macports.org/) or [Homebrew](https://brew.sh/). If you are using Python 3.6 on MacOSX, you need to run the following command to install the `certifi` package of certificates because Python 3.6 on MacOSX has no certificates to validate SSL connections (see this [StackOverflow question](https://stackoverflow.com/questions/27835619/urllib-and-ssl-certificate-verify-failed-error)):
 
     $ /Applications/Python\ 3.6/Install\ Certificates.command
 
@@ -48,12 +50,15 @@ Another option is to download and install [Anaconda](https://www.continuum.io/do
 If you choose to use Anaconda, read the next section, or else jump to the [Using pip](#using-pip) section.
 
 ## Using Anaconda
+
+**Warning**: this section does not work yet, since TensorFlow 2.0 is not yet available Anaconda repositories.
+
 When using Anaconda, you can optionally create an isolated Python environment dedicated to this project. This is recommended as it makes it possible to have a different environment for each project (e.g. one for this project), with potentially different libraries and library versions:
 
-    $ conda create -n mlbook python=3.5 anaconda
+    $ conda create -n mlbook python=3.6 anaconda
     $ conda activate mlbook
 
-This creates a fresh Python 3.5 environment called `mlbook` (you can change the name if you want to), and it activates it. This environment contains all the scientific libraries that come with Anaconda. This includes all the libraries we will need (NumPy, Matplotlib, Pandas, Jupyter and a few others), except for TensorFlow, so let's install it:
+This creates a fresh Python 3.6 environment called `mlbook` (you can change the name if you want to), and it activates it. This environment contains all the scientific libraries that come with Anaconda. This includes all the libraries we will need (NumPy, Matplotlib, Pandas, Jupyter and a few others), except for TensorFlow, so let's install it:
 
     $ conda install -n mlbook -c conda-forge tensorflow
 
@@ -66,6 +71,9 @@ Next, you can optionally install Jupyter extensions. These are useful to have ni
 You are all set! Next, jump to the [Starting Jupyter](#starting-jupyter) section.
 
 ## Using pip 
+
+**Warning**: this will work within a few days, when TensorFlow 2.0-preview is released.
+
 If you are not using Anaconda, you need to install several scientific Python libraries that are necessary for this project, in particular NumPy, Matplotlib, Pandas, Jupyter and TensorFlow (and a few others). For this, you can either use Python's integrated packaging system, pip, or you may prefer to use your system's own packaging system (if available, e.g. on Linux, or on MacOSX when using MacPorts or Homebrew). The advantage of using pip is that it is easy to create multiple isolated Python environments with different libraries and different library versions (e.g. one environment for each project). The advantage of using your system's packaging system is that there is less risk of having conflicts between your Python libraries and your system's other packages. Since I have many projects with different library requirements, I prefer to use pip with isolated environments. Moreover, the pip packages are usually the most recent ones available, while Anaconda and system packages often lag behind a bit.
 
 These are the commands you need to type in a terminal if you want to use pip to install the required libraries. Note: in all the following commands, if you chose to use Python 2 rather than Python 3, you must replace `pip3` with `pip`, and `python3` with `python`.
@@ -117,4 +125,4 @@ Note: you can also visit [http://localhost:8888/nbextensions](http://localhost:8
 Congrats! You are ready to learn Machine Learning, hands on!
 
 # Contributors
-I would like to thank everyone who contributed to this project, either by providing useful feedback, filing issues or submitting Pull Requests. Special thanks go to Steven Bunkley and Ziembla who created the `docker` directory.
+I would like to thank everyone who contributed to this project, either by providing useful feedback, filing issues or submitting Pull Requests. Special thanks go to Haesun Park who helped on some of the exercise solutions, and to Steven Bunkley and Ziembla who created the `docker` directory.
