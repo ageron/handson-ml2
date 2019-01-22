@@ -46,7 +46,7 @@ xgboost==0.81
 # you must install CUDA, cuDNN and more: see tensorflow.org for the detailed
 # installation instructions.
 tf-nightly-2.0-preview
-tf-nightly-gpu-2.0-preview
+#tf-nightly-gpu-2.0-preview
 #tensorflow==1.12.0
 #tensorflow-gpu==1.12.0
 #tensorflow-hub==0.2.0
@@ -70,7 +70,7 @@ scikit-image==0.14.1
 ##### Extra packages (optional)
 
 # Nice utility to diff Jupyter Notebooks.
-nbdime==1.0.4
+#nbdime==1.0.4
 
 # May be useful with Pandas for complex "where" clauses (e.g., Pandas
 # tutorial).
@@ -83,8 +83,4 @@ urlextract==0.8.3
 
 # Optional: this extension is handy to easily start/stop tensorboard
 # server(s) directly from Jupyter.
-jupyter-tensorboard==0.1.8
-
-# Optional: these are useful Jupyter extensions, in particular to display the
-# table of contents
-jupyter-contrib-nbextensions==0.5.0
+#jupyter-tensorboard==0.1.8
