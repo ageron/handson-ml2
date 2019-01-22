@@ -21,7 +21,7 @@ python. It contains the example code and solutions to the exercises in the secon
 * Or open it in [Colaboratory](https://colab.research.google.com/github/ageron/handson-ml2/blob/master/):
 <a href="https://colab.research.google.com/github/ageron/handson-ml2/blob/master/"><img src="https://colab.research.google.com/img/colab_favicon.ico" width="90" /></a>
 
-  * _Note_: Colab only copies the notebooks you open, it does not clone the rest of the project, so you need to run `!git clone https://github.com/ageron/handson-ml2` and `%mv handson-ml2/* .` to have access to other files in this project (such as datasets and images).
+  * _Note_: Colab only copies the notebooks you open, it does not clone the rest of the project, so you need to run `!git clone https://github.com/ageron/handson-ml2` and `%cd handson-ml2` to have access to other files in this project (such as datasets and images).
 
 ### Just want to quickly look at some notebooks, without executing any code?
 
