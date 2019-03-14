@@ -18,7 +18,7 @@
 #
 # Then install these requirements:
 #     $ pip install --upgrade -r requirements.txt
-# 
+#
 # Finally, start jupyter:
 #     $ jupyter notebook
 #
@@ -26,51 +26,53 @@
 
 ##### Core scientific packages
 jupyter==1.0.0
-matplotlib==3.0.2
-numpy==1.15.4
-pandas==0.23.4
-scipy==1.2.0
+jupyter-client==5.2.4
+jupyter-console==6.0.0
+jupyter-core==4.4.0
+matplotlib==3.0.3
+numpy==1.16.2
+pandas==0.24.1
+scipy==1.2.1
 
 
 ##### Machine Learning packages
-scikit-learn==0.20.2
+scikit-learn==0.20.3
 
 # Optional: the XGBoost library is only used in the ensemble learning chapter.
-xgboost==0.81
+xgboost==0.82
 
 
 ##### Deep Learning packages
 
 # Replace tensorflow with tensorflow-gpu if you want GPU support. If so,
-# you need a GPU card with CUDA Compute Capability 3.0 or higher support, and
+# you need a GPU card with CUDA Compute Capability 3.5 or higher support, and
 # you must install CUDA, cuDNN and more: see tensorflow.org for the detailed
 # installation instructions.
 tf-nightly-2.0-preview
 #tf-nightly-gpu-2.0-preview
-#tensorflow==1.12.0
-#tensorflow-gpu==1.12.0
-#tensorflow-hub==0.2.0
-#tensorflow-probability==0.5.0
+tb-nightly
+#tensorflow-hub
+#tensorflow-probability
 
 
 # Optional: OpenAI gym is only needed for the Reinforcement Learning chapter.
 # There are a few dependencies you need to install first, check out:
 # https://github.com/openai/gym#installing-everything
-#gym[all]==0.10.9
+#gym[all]
 # If you only want to install the Atari dependency, uncomment this line instead:
-#gym[atari]==0.10.9
+#gym[atari]
 
 
 ##### Image manipulation
-imageio==2.4.1
-Pillow==5.3.0
-scikit-image==0.14.1
+imageio==2.5.0
+Pillow==5.4.1
+scikit-image==0.14.2
 
 
 ##### Extra packages (optional)
 
 # Nice utility to diff Jupyter Notebooks.
-#nbdime==1.0.4
+#nbdime
 
 # May be useful with Pandas for complex "where" clauses (e.g., Pandas
 # tutorial).
@@ -79,8 +81,8 @@ numexpr==2.6.9
 # Optional: these libraries can be useful in the classification chapter,
 # exercise 4.
 nltk==3.4
-urlextract==0.8.3
+urlextract==0.9
 
-# Optional: this extension is handy to easily start/stop tensorboard
-# server(s) directly from Jupyter.
-#jupyter-tensorboard==0.1.8
+# Optional: tqdm displays nice progress bars, ipywidgets for tqdm's notebook support
+tqdm==4.31.1
+ipywidgets==7.4.2
