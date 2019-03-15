@@ -26,9 +26,6 @@
 
 ##### Core scientific packages
 jupyter==1.0.0
-jupyter-client==5.2.4
-jupyter-console==6.0.0
-jupyter-core==4.4.0
 matplotlib==3.0.3
 numpy==1.16.2
 pandas==0.24.1
@@ -48,19 +45,32 @@ xgboost==0.82
 # you need a GPU card with CUDA Compute Capability 3.5 or higher support, and
 # you must install CUDA, cuDNN and more: see tensorflow.org for the detailed
 # installation instructions.
+
+#tensorflow
 tf-nightly-2.0-preview
+##tensorflow-gpu
 #tf-nightly-gpu-2.0-preview
+
+#tensorboard
 tb-nightly
-#tensorflow-hub
+
+#tensorflow-datasets
+tfds-nightly
+
+tensorflow-hub
+
 #tensorflow-probability
+tfp-nightly
+
+tensorflow-transform
 
 
 # Optional: OpenAI gym is only needed for the Reinforcement Learning chapter.
 # There are a few dependencies you need to install first, check out:
 # https://github.com/openai/gym#installing-everything
-#gym[all]
+#gym[all]==0.10.9
 # If you only want to install the Atari dependency, uncomment this line instead:
-#gym[atari]
+#gym[atari]==0.10.9
 
 
 ##### Image manipulation
@@ -72,7 +82,7 @@ scikit-image==0.14.2
 ##### Extra packages (optional)
 
 # Nice utility to diff Jupyter Notebooks.
-#nbdime
+#nbdime==1.0.5
 
 # May be useful with Pandas for complex "where" clauses (e.g., Pandas
 # tutorial).
