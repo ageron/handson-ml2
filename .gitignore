@@ -1,4 +1,5 @@
 *.bak
+*.bak.*
 *.ckpt
 *.old
 *.pyc
@@ -13,5 +14,6 @@ my_*
 datasets/flowers
 datasets/lifesat/lifesat.csv
 datasets/spam
+datasets/titanic
 datasets/words
 
