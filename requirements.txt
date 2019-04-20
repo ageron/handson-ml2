@@ -46,10 +46,8 @@ xgboost==0.82
 # you must install CUDA, cuDNN and more: see tensorflow.org for the detailed
 # installation instructions.
 
-#tensorflow
-tf-nightly-2.0-preview
-##tensorflow-gpu
-#tf-nightly-gpu-2.0-preview
+tensorflow==2.0.0a0
+#tensorflow-gpu==2.0.0a0
 
 #tensorboard
 tb-nightly
@@ -64,6 +62,9 @@ tfp-nightly
 
 tensorflow-transform
 
+# At the present (April 2019) the TF Addons library is only available on Linux
+# So uncomment this line if you are using Linux.
+#tensorflow-addons
 
 # Optional: OpenAI gym is only needed for the Reinforcement Learning chapter.
 # There are a few dependencies you need to install first, check out:
