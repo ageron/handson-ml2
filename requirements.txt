@@ -85,6 +85,9 @@ scikit-image==0.14.2
 # Nice utility to diff Jupyter Notebooks.
 #nbdime==1.0.5
 
+# Joblib is a set of tools to provide lightweight pipelining
+joblib==0.13.2
+
 # May be useful with Pandas for complex "where" clauses (e.g., Pandas
 # tutorial).
 numexpr==2.6.9
