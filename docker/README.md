@@ -18,11 +18,11 @@ Some general knowledge about `docker` infrastructure might be useful (that's an 
 
 Switch to `docker` directory here and run `make build` (or `docker-compose build`) to build your docker image. That may take some time but is only required once. Or perhaps a few times after you tweak something in a `Dockerfile`.
 
-After the process is finished you have a `handson-ml` image, that will be the base for your experiments. You can confirm that looking on results of `docker images` command.
+After the process is finished you have a `handson-ml2` image, that will be the base for your experiments. You can confirm that looking on results of `docker images` command.
 
 ### Run the notebooks
 
-Run `make run` (or just `docker-compose up`) to start the jupyter server inside the container (also named `handson-ml`, same as image). Just point your browser to the URL printed on the screen (or just <http://localhost:8888> if you enabled password authentication) and you're ready to play with the book's code!
+Run `make run` (or just `docker-compose up`) to start the jupyter server inside the container (also named `handson-ml2`, same as image). Just point your browser to the URL printed on the screen (or just <http://localhost:8888> if you enabled password authentication) and you're ready to play with the book's code!
 
 The server runs in the directory containing the notebooks, and the changes you make from the browser will be persisted there.
 
@@ -30,9 +30,9 @@ You can close the server just by pressing `Ctrl-C` in terminal window.
 
 ### Run additional commands in container
 
-Run `make exec` (or `docker-compose exec handson-ml bash`) while the server is running to run an additional `bash` shell inside the `handson-ml` container. Now you're inside the environment prepared within the image.
+Run `make exec` (or `docker-compose exec handson-ml2 bash`) while the server is running to run an additional `bash` shell inside the `handson-ml2` container. Now you're inside the environment prepared within the image.
 
-One of the usefull things that can be done there would be starting TensorBoard (for example with simple `tb` command, see bashrc file).
+One of the useful things that can be done there would be starting TensorBoard (for example with simple `tb` command, see bashrc file).
 
 Another one may be comparing versions of the notebooks using the `nbdiff` command if you haven't got `nbdime` installed locally (it is **way** better than plain `diff` for notebooks). See [Tools for diffing and merging of Jupyter notebooks](https://github.com/jupyter/nbdime) for more details.
 
