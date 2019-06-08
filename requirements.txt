@@ -29,7 +29,7 @@ jupyter==1.0.0
 matplotlib==3.0.3
 numpy==1.16.2
 pandas==0.24.1
-scipy==1.2.1
+scipy==1.1.0
 
 
 ##### Machine Learning packages
@@ -39,15 +39,15 @@ scikit-learn==0.20.3
 xgboost==0.82
 
 
-##### Deep Learning packages
+##### TensorFlow-related packages
 
 # Replace tensorflow with tensorflow-gpu if you want GPU support. If so,
 # you need a GPU card with CUDA Compute Capability 3.5 or higher support, and
 # you must install CUDA, cuDNN and more: see tensorflow.org for the detailed
 # installation instructions.
 
-tensorflow==2.0.0a0
-#tensorflow-gpu==2.0.0a0
+tf-nightly-2.0-preview
+#tf-nightly-gpu-2.0-preview
 
 #tensorboard
 tb-nightly
@@ -57,21 +57,19 @@ tfds-nightly
 
 tensorflow-hub
 
-#tensorflow-probability
-tfp-nightly
+# Optional: only used in chapter 13.
+#tensorflow-transform==0.13.0
 
-tensorflow-transform
-
+# Optional: only used in chapter 16.
 # At the present (April 2019) the TF Addons library is only available on Linux
 # So uncomment this line if you are using Linux.
 #tensorflow-addons
 
-# Optional: OpenAI gym is only needed for the Reinforcement Learning chapter.
-# There are a few dependencies you need to install first, check out:
-# https://github.com/openai/gym#installing-everything
-#gym[all]==0.10.9
-# If you only want to install the Atari dependency, uncomment this line instead:
-#gym[atari]==0.10.9
+# Optional: the TF Agents library is only needed in chapter 18
+tf-agents-nightly
+
+# Optional: the TF Serving API library is just needed for chapter 19.
+tensorflow-serving-api
 
 
 ##### Image manipulation
@@ -80,10 +78,15 @@ Pillow==5.4.1
 scikit-image==0.14.2
 
 
-##### Extra packages (optional)
+##### Reinforcement Learning library
 
-# Nice utility to diff Jupyter Notebooks.
-#nbdime==1.0.5
+# OpenAI gym is only needed in chapter 18.
+# There are a few dependencies you need to install first, check out:
+# https://github.com/openai/gym#installing-everything
+gym[atari]==0.10.9
+
+
+##### Additional utilities
 
 # Joblib is a set of tools to provide lightweight pipelining
 joblib==0.13.2
@@ -92,11 +95,17 @@ joblib==0.13.2
 # tutorial).
 numexpr==2.6.9
 
-# Optional: these libraries can be useful in the classification chapter,
-# exercise 4.
+# Optional: these libraries can be useful in chapter 3, exercise 4.
 nltk==3.4
 urlextract==0.9
+
+# Needed in chapter 19.
+requests==2.22.0
+
+# Optional: nice utility to diff Jupyter Notebooks.
+#nbdime==1.0.5
 
 # Optional: tqdm displays nice progress bars, ipywidgets for tqdm's notebook support
 tqdm==4.31.1
 ipywidgets==7.4.2
+
