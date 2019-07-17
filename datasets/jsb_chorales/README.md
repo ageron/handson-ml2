@@ -20,35 +20,35 @@ $ tar xvzf jsb_chorales.tgz
 ## Data structure
 The dataset is split in three (train, valid, test), with a total of 382 CSV files:
 
-```bash
+```
 $ tree
 .
 ├── train
 │   ├── chorale_000.csv
 │   ├── chorale_001.csv
 │   ├── chorale_002.csv
-|   |   ...
+│   │   ...
 │   ├── chorale_227.csv
 │   └── chorale_228.csv
 ├── valid
-|   ├── chorale_229.csv
-|   ├── chorale_230.csv
-|   ├── chorale_231.csv
-|   |   ...
+│   ├── chorale_229.csv
+│   ├── chorale_230.csv
+│   ├── chorale_231.csv
+│   │   ...
 │   ├── chorale_303.csv
 │   └── chorale_304.csv
 └── test
     ├── chorale_305.csv
     ├── chorale_306.csv
     ├── chorale_307.csv
-    |   ...
+    │   ...
     ├── chorale_380.csv
     └── chorale_381.csv
 ```
 
 ## Data sample
 
-```bash
+```
 $ head train/chorale_000.csv
 note0,note1,note2,note3
 74,70,65,58
