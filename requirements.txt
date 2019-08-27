@@ -96,7 +96,7 @@ joblib==0.13.2
 numexpr==2.6.9
 
 # Optional: these libraries can be useful in chapter 3, exercise 4.
-nltk==3.4
+nltk==3.4.5
 urlextract==0.9
 
 # Needed in chapter 19.
