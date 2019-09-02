@@ -4,7 +4,7 @@ The second edition has six main objectives:
 1. Cover additional ML topics: additional unsupervised learning techniques (including clustering, anomaly detection, density estimation and mixture models), additional techniques for training deep nets (including self-normalized networks), additional computer vision techniques (including Xception, SENet, object detection with YOLO, and semantic segmentation using R-CNN), handling sequences using CNNs (including WaveNet), natural language processing using RNNs, CNNs and Transformers, generative adversarial networks
 2. Cover additional libraries and APIs: Keras, the Data API, TF-Agents for Reinforcement Learning, training and deploying TF models at scale using the Distribution Strategies API, TF-Serving and Google Cloud AI Platform. Also briefly introduce TF Transform, TFLite, TF Addons/Seq2Seq, TensorFlow.js and more.
 3. Mention some of the latest important results from Deep Learning research.
-4. Migrate all TensorFlow chapters to TensorFlow{nbsp}2, and use TensorFlow's implementation of the Keras API (called tf.keras) whenever possible, to simplify the code examples.
+4. Migrate all TensorFlow chapters to TensorFlow 2, and use TensorFlow's implementation of the Keras API (called tf.keras) whenever possible, to simplify the code examples.
 5. Update the code examples to use the latest version of Scikit-Learn, NumPy, Pandas, Matplotlib and other libraries.
 6. Clarify some sections and fix some errors, thanks to plenty of great feedback from readers.
 
@@ -61,7 +61,7 @@ More specifically, here are the main changes for the 2nd edition (other than cla
   * Added a note about the risks of adaptive optimization methods.
   * Updated the practical guidelines.
 * Chapter 12 – Custom Models and Training with TensorFlow (completely rewritten)
-  * A tour of TensorFlow{nbsp}2.
+  * A tour of TensorFlow 2.
   * TensorFlow's lower-level Python API.
   * Writing custom loss functions, metrics, layers, models.
   * Using auto-differentiation and creating custom training algorithms.
