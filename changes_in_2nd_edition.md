@@ -8,9 +8,9 @@ The second edition has six main objectives:
 5. Update the code examples to use the latest version of Scikit-Learn, NumPy, Pandas, Matplotlib and other libraries.
 6. Clarify some sections and fix some errors, thanks to plenty of great feedback from readers.
 
-Some chapters were added, others were rewritten and a few were reordered. The following table shows the mapping between the 1^st^ edition chapters and the 2^nd^ edition chapters:
+Some chapters were added, others were rewritten and a few were reordered. The following table shows the mapping between the 1st edition chapters and the 2nd edition chapters:
 
-|1^st^ ed. chapter  | 2^nd^ ed. chapter | %Changes | 2^nd^ ed. title
+|1st ed. chapter  | 2nd ed. chapter | %Changes | 2nd ed. title
 |--|--|--|--|
 |1|1|<10%|The Machine Learning Landscape
 |2|2|<10%|End-to-End Machine Learning Project
