@@ -41,18 +41,10 @@ xgboost==0.82
 
 ##### TensorFlow-related packages
 
-# Replace tensorflow with tensorflow-gpu if you want GPU support. If so,
-# you need a GPU card with CUDA Compute Capability 3.5 or higher support, and
-# you must install CUDA, cuDNN and more: see tensorflow.org for the detailed
-# installation instructions.
+tensorflow~=2.0.0-rc1
+tensorboard~=2.0.0
 
-tf-nightly-2.0-preview
-#tf-nightly-gpu-2.0-preview
-
-#tensorboard
-tb-nightly
-
-#tensorflow-datasets
+# tensorflow-datasets
 tfds-nightly
 
 tensorflow-hub
@@ -69,7 +61,7 @@ tensorflow-hub
 tf-agents-nightly
 
 # Optional: the TF Serving API library is just needed for chapter 19.
-tensorflow-serving-api
+# tensorflow-serving-api
 
 
 ##### Image manipulation
@@ -83,7 +75,8 @@ scikit-image==0.14.2
 # OpenAI gym is only needed in chapter 18.
 # There are a few dependencies you need to install first, check out:
 # https://github.com/openai/gym#installing-everything
-gym[atari]==0.10.9
+# gym[atari]==0.10.9
+gym[atari,box2d,classic_control]==0.10.9
 
 
 ##### Additional utilities
@@ -109,3 +102,13 @@ requests==2.22.0
 tqdm==4.31.1
 ipywidgets==7.4.2
 
+# tmp fix for peer dependency error:
+# spyder 3.3.3 requires pyqt5<=5.12; python_version >= "3", which is not installed.
+# tfp-nightly 0.9.0.dev20190926 has requirement cloudpickle==1.1.1, but you'll have cloudpickle 0.8.0 which is incompatible.
+cloudpickle~=1.1.0
+
+# tmp fix for peer dep error:
+# Successfully built gym nltk opt-einsum absl-py termcolor gast promise dill googleapis-common-protos
+# spyder 3.3.3 requires pyqt5<=5.12; python_version >= "3", which is not installed.
+pyqt5<=5.12
+python_version >= "3"
