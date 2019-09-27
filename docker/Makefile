@@ -8,7 +8,7 @@ exec:
 build: stop .FORCE
 	docker-compose build
 rebuild: stop .FORCE
-	docker-compose up --build
+	docker-compose build --force-rm
 stop:
 	docker-compose down || true;
 .FORCE:
