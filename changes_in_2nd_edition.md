@@ -110,7 +110,7 @@ More specifically, here are the main changes for the 2nd edition (other than cla
   * Training models across multiple devices using the Distribution Strategies API.
 
 ## Migrating from TF 1 to TF 2
-Migrating from TensorFlow 1.x to 2.0 is similar to migrating from Python 2 to 3. The first to do is... breathe. Don't rush. TensorFlow 1.x will be around for a while, you have time.
+Migrating from TensorFlow 1.x to 2.0 is similar to migrating from Python 2 to 3. The first thing to do is... breathe. Don't rush. TensorFlow 1.x will be around for a while, you have time.
 
 * You should start by upgrading to the last TensorFlow 1.x version (it will probably be 1.15 by the time you read this).
 * Migrate as much of your code as possible to using high level APIs, either tf.keras or the Estimators API. The Estimators API will still work in TF 2.0, but you should prefer using Keras from now on, as the TF team announced that Keras is preferred and it's likely that they will put more effort into improving the Keras API. Also prefer using Keras preprocessing layers (see chapter 13) rather than `tf.feature_columns`.
