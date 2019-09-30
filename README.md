@@ -20,10 +20,10 @@ Use any of the following services.
 
   * _Note_: Most of the time, Binder starts up quickly and works great, but when handson-ml2 is updated, Binder creates a new environment from scratch, and this can take quite some time.
 
-* Or open it in [Deepnote](https://beta.deepnote.org/launch?template=data-science&url=https%3A//github.com/ageron/handson-ml2/blob/master/index.ipynb):
-<a href="https://beta.deepnote.org/launch?template=data-science&url=https%3A//github.com/ageron/handson-ml2/blob/master/index.ipynb"><img src="https://www.deepnote.org/static/illustration.png" width="150" /></a>
+* Or open it in [Deepnote](https://beta.deepnote.com/launch?template=data-science&url=https%3A//github.com/ageron/handson-ml2/blob/master/index.ipynb):
+<a href="https://beta.deepnote.com/launch?template=data-science&url=https%3A//github.com/ageron/handson-ml2/blob/master/index.ipynb"><img src="https://www.deepnote.com/static/illustration.png" width="150" /></a>
 
-  * _Note_: Deepnote environments start up quickly, but they do not contain the latest Scikit-Learn and TensorFlow libraries, so you will need to run `!python3 -m pip install -U -r requirements.txt` before you import any library (or you must restart the runtime).
+  * _Note_: Deepnote environments start up quickly!
 
 * Or open it in [Colaboratory](https://colab.research.google.com/github/ageron/handson-ml2/blob/master/):
 <a href="https://colab.research.google.com/github/ageron/handson-ml2/blob/master/"><img src="https://colab.research.google.com/img/colab_favicon.ico" width="90" /></a>
