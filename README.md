@@ -23,8 +23,6 @@ Use any of the following services.
 * Or open it in [Deepnote](https://beta.deepnote.com/launch?template=data-science&url=https%3A//github.com/ageron/handson-ml2/blob/master/index.ipynb):
 <a href="https://beta.deepnote.com/launch?template=data-science&url=https%3A//github.com/ageron/handson-ml2/blob/master/index.ipynb"><img src="https://www.deepnote.com/static/illustration.png" width="150" /></a>
 
-  * _Note_: Deepnote environments start up quickly!
-
 * Or open it in [Colaboratory](https://colab.research.google.com/github/ageron/handson-ml2/blob/master/):
 <a href="https://colab.research.google.com/github/ageron/handson-ml2/blob/master/"><img src="https://colab.research.google.com/img/colab_favicon.ico" width="90" /></a>
 
