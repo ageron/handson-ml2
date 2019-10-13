@@ -71,16 +71,13 @@ imageio==2.6.0
 Pillow==6.2.0
 scikit-image==0.15.0
 graphviz==0.10.1
-pygraphviz==1.3
-pydot==1.4.1
-
 
 ##### Reinforcement Learning library
 
 # OpenAI gym is only needed in chapter 18.
 # There are a few dependencies you need to install first, check out:
 # https://github.com/openai/gym#installing-everything
-gym[atari]==0.15.3
+gym[atari,box2d,classic_control]==0.15.3
 
 
 ##### Additional utilities

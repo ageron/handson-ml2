@@ -1,4 +1,4 @@
-FROM continuumio/anaconda3:2019.03
+FROM continuumio/miniconda3:latest
 
 RUN apt-get update && apt-get upgrade -y \
     && apt-get install -y \
@@ -6,32 +6,13 @@ RUN apt-get update && apt-get upgrade -y \
         build-essential \
         git \
         sudo \
-        cmake zlib1g-dev libjpeg-dev xvfb libav-tools xorg-dev libboost-all-dev libsdl2-dev swig \
+        cmake zlib1g-dev libjpeg-dev xvfb ffmpeg xorg-dev libboost-all-dev libsdl2-dev swig \
         unzip zip \
     && rm -rf /var/lib/apt/lists/*
 
 RUN conda update -n base conda
-RUN conda install -y \
-        joblib \
-        PyYAML==3.13
-RUN conda install -y -c conda-forge \
-        pyopengl \
-        xgboost \
-        nbdime
-RUN pip install "urlextract"
-RUN pip install "gym[atari,box2d,classic_control]"
-RUN pip install "tensorflow-hub"
-RUN pip install "tensorflow-serving-api"
-RUN pip install "tfx"
-#RUN pip install "tensorflow-addons"
-RUN pip install "tf-agents-nightly"
-RUN pip install "tfds-nightly"
-RUN pip install "tfp-nightly"
-RUN pip uninstall -y tensorflow
-RUN pip uninstall -y tensorboard
-RUN pip install "tf-nightly-2.0-preview"
-RUN pip install "tb-nightly"
-
+COPY docker/environment.yml /tmp/
+RUN conda env create -f /tmp/environment.yml
 
 ARG username
 ARG userid
