@@ -37,7 +37,7 @@ _Note_: [github.com's notebook viewer](https://github.com/ageron/handson-ml2/blo
 
 ### Want to install this project on your own machine?
 
-If you have a working Python 3.5+ environment and git is installed, then an easy way to install this project and its dependencies is using pip. Open a terminal and run the following commands (do not type the `$` signs, they just indicate that this is a terminal command):
+If you have a working Python 3.5+ environment and git is installed, then this project and its dependencies can be installed with pip. Open a terminal and run the following commands (do not type the `$` signs, they just indicate that this is a terminal command):
 
     $ git clone https://github.com/ageron/handson-ml2.git
     $ cd handson-ml2
