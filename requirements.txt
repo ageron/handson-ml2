@@ -49,12 +49,12 @@ tensorflow==2.0.0
 
 tensorboard==2.0.0
 
-tensorflow-datasets==1.2.0
+tensorflow-datasets==1.3.0
 
 tensorflow-hub==0.6.0
 
 # Optional: only used in chapter 13.
-tfx==0.14.0
+tfx==0.15.0rc0
 
 # Optional: only used in chapter 16.
 #tensorflow-addons==0.6.0
@@ -63,7 +63,7 @@ tfx==0.14.0
 tf-agents-nightly
 
 # Optional: the TF Serving API library is just needed for chapter 19.
-tensorflow-serving-api==1.14.0
+tensorflow-serving-api==2.0.0
 
 
 ##### Image manipulation
