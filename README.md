@@ -49,7 +49,7 @@ Or using Anaconda:
     $ git clone https://github.com/ageron/handson-ml2.git
     $ cd handson-ml2
     $ # Read `environment.yml` if you want to use a GPU.
-    $ conda env create -f /tmp/environment.yml
+    $ conda env create -f environment.yml
     $ conda activate tf2
     $ jupyter notebook
 
