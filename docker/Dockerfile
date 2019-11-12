@@ -12,6 +12,7 @@ RUN apt-get update && apt-get upgrade -y \
 
 COPY environment.yml /tmp/
 RUN conda update -y -n base conda \
+    && echo '    - pyvirtualdisplay' >> /tmp/environment.yml \
     && conda env create -f /tmp/environment.yml \
     && conda clean -y -t \
     && rm /tmp/environment.yml
