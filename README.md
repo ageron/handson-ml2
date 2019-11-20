@@ -10,12 +10,12 @@ python. It contains the example code and solutions to the exercises in the secon
 
 ## Quick Start
 
-### Want to play with these notebooks without having to install anything?
+### Want to play with these notebooks online without having to install anything?
 Use any of the following services.
 
-**WARNING**: Please be aware that these services provide temporary environments: anything you do will be deleted after a while, so make sure you save anything you care about.
+**WARNING**: Please be aware that these services provide temporary environments: anything you do will be deleted after a while, so make sure you download any data you care about.
 
-* Open this repository in [Colaboratory](https://colab.research.google.com/github/ageron/handson-ml2/blob/master/):
+* **Recommended**: open this repository in [Colaboratory](https://colab.research.google.com/github/ageron/handson-ml2/blob/master/):
 <a href="https://colab.research.google.com/github/ageron/handson-ml2/blob/master/"><img src="https://colab.research.google.com/img/colab_favicon.ico" width="90" /></a>
 
 * Or open it in [Binder](https://mybinder.org/v2/gh/ageron/handson-ml2/master):
@@ -28,32 +28,27 @@ Use any of the following services.
 
 ### Just want to quickly look at some notebooks, without executing any code?
 
-Browse this repository using [jupyter.org's notebook viewer](http://nbviewer.jupyter.org/github/ageron/handson-ml2/blob/master/index.ipynb):
-<a href="http://nbviewer.jupyter.org/github/ageron/handson-ml2/blob/master/index.ipynb"><img src="https://jupyter.org/assets/nav_logo.svg" width="150" /></a>
+Browse this repository using [jupyter.org's notebook viewer](https://nbviewer.jupyter.org/github/ageron/handson-ml2/blob/master/index.ipynb):
+<a href="https://nbviewer.jupyter.org/github/ageron/handson-ml2/blob/master/index.ipynb"><img src="https://jupyter.org/assets/nav_logo.svg" width="150" /></a>
 
-_Note_: [github.com's notebook viewer](https://github.com/ageron/handson-ml2/blob/master/index.ipynb) also works but it is slower and the math equations are not always displayed correctly.
+_Note_: [github.com's notebook viewer](index.ipynb) also works but it is slower and the math equations are not always displayed correctly.
+
+### Want to run this project using a Docker image?
+Read the [Docker instructions](https://github.com/ageron/handson-ml2/tree/master/docker).
 
 ### Want to install this project on your own machine?
 
-If you have a working Python 3.5+ environment and git is installed, then this project and its dependencies can be installed with pip. Open a terminal and run the following commands (do not type the `$` signs, they just indicate that this is a terminal command):
-
-    $ git clone https://github.com/ageron/handson-ml2.git
-    $ cd handson-ml2
-    $ python3 -m pip install --user --upgrade pip setuptools
-    $ # Read `requirements.txt` if you want to use a GPU.
-    $ python3 -m pip install --user --upgrade -r requirements.txt
-    $ jupyter notebook
-
-Or using Anaconda:
+If you have [Anaconda](https://www.anaconda.com/distribution/) (or [Miniconda](https://docs.conda.io/en/latest/miniconda.html)) and git installed, then this project and its dependencies can be installed quite simply. Open a terminal and run the following commands (do not type the first `$` signs on each line, they just indicate that these are terminal commands):
 
     $ git clone https://github.com/ageron/handson-ml2.git
     $ cd handson-ml2
     $ # Read `environment.yml` if you want to use a GPU.
     $ conda env create -f environment.yml
     $ conda activate tf2
+    $ python3 -m ipykernel install --user --name=python3
     $ jupyter notebook
 
-If you need more detailed installation instructions, read the [detailed installation instructions](INSTALL.md).
+If you prefer to install Python and the required libraries manually, or if you need further instructions, read the [detailed installation instructions](INSTALL.md).
 
 ## Contributors
 I would like to thank everyone who contributed to this project, either by providing useful feedback, filing issues or submitting Pull Requests. Special thanks go to Haesun Park who helped on some of the exercise solutions, and to Steven Bunkley and Ziembla who created the `docker` directory.
