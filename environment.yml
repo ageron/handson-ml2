@@ -3,7 +3,7 @@ channels:
   - conda-forge
   - defaults
 dependencies:
-  - graphviz=2.40.1
+  - graphviz
   - imageio=2.6.0
   - ipython=7.8.0
   - ipywidgets=7.5.1
@@ -29,7 +29,6 @@ dependencies:
   - tqdm=4.36.1
   - wheel=0.33.6
   - widgetsnbextension=3.5.1
-  - xgboost=0.90
   - pip:
     - atari-py==0.2.6
     - gym==0.15.3
