@@ -1,104 +1,94 @@
-# First make sure to update pip:
-#     $ sudo python3 -m pip install --upgrade pip
-#
-# Then you probably want to work in a virtualenv (optional):
-#     $ sudo python3 -m pip install --upgrade virtualenv
-# Or if you prefer you can install virtualenv using your favorite packaging
-# system. E.g., in Ubuntu:
-#     $ sudo apt-get update && sudo apt-get install virtualenv
-# Then:
-#     $ cd $my_work_dir
-#     $ virtualenv my_env
-#     $ . my_env/bin/activate
-#
-# Next, optionally uncomment the OpenAI gym lines (see below).
-# If you do, make sure to install the dependencies first.
-#
-# Then install these requirements:
-#     $ python3 -m pip install --upgrade -r requirements.txt
-#
-# Finally, start jupyter:
-#     $ jupyter notebook
-#
-
+# TensorFlow is much easier to install using Anaconda, especially
+# on Windows or when using a GPU. Please see the installation
+# instructions in INSTALL.md
 
 ##### Core scientific packages
 jupyter==1.0.0
-matplotlib==3.1.1
-numpy==1.17.2
-pandas==0.25.1
+matplotlib==3.1.2
+numpy==1.17.3
+pandas==0.25.3
 scipy==1.3.1
 
 
 ##### Machine Learning packages
-scikit-learn==0.20.4
+scikit-learn==0.22
 
-# Optional: the XGBoost library is only used in the ensemble learning chapter.
+# Optional: the XGBoost library is only used in chapter 7
 xgboost==0.90
-
 
 ##### TensorFlow-related packages
 
-# Replace tensorflow with tensorflow-gpu if you want GPU support. If so,
-# you need a GPU card with CUDA Compute Capability 3.5 or higher support, and
+# If you have a TF-compatible GPU and you want to enable GPU support, then
+# replace tensorflow with tensorflow-gpu, and replace tensorflow-serving-api
+# with tensorflow-serving-api-gpu.
+# Your GPU must have CUDA Compute Capability 3.5 or higher support, and
 # you must install CUDA, cuDNN and more: see tensorflow.org for the detailed
 # installation instructions.
 
 tensorflow==2.0.0
 #tensorflow-gpu==2.0.0
 
-tensorboard==2.0.0
-
-tensorflow-datasets==1.3.0
-
-tensorflow-hub==0.6.0
-
-# Optional: only used in chapter 13.
-tfx==0.15.0rc0
-
-# Optional: only used in chapter 16.
-#tensorflow-addons==0.6.0
-
-# Optional: the TF Agents library is only needed in chapter 18
-tf-agents-nightly
-
 # Optional: the TF Serving API library is just needed for chapter 19.
 tensorflow-serving-api==2.0.0
+#tensorflow-serving-api-gpu==2.0.0
+
+tensorboard==2.0.0
+tensorflow-datasets==1.3.0
+tensorflow-hub==0.6.0
+tensorflow-probability==0.7
+
+# Optional: only used in chapter 13.
+# NOT AVAILABLE ON WINDOWS
+tfx==0.15.0
+
+# Optional: only used in chapter 16.
+# NOT AVAILABLE ON WINDOWS
+tensorflow-addons==0.6.0
+
+##### Reinforcement Learning library (chapter 18)
+
+# There are a few dependencies you need to install first, check out:
+# https://github.com/openai/gym#installing-everything
+gym[atari]==0.15.4
+# On Windows, install atari_py using:
+# pip install --no-index -f https://github.com/Kojoley/atari-py/releases atari_py
+
+tf-agents==0.3.0rc0
 
 
 ##### Image manipulation
-imageio==2.6.0
-Pillow==6.2.0
-scikit-image==0.15.0
-graphviz==0.10.1
+imageio==2.6.1
+Pillow==6.2.1
+scikit-image==0.16.2
+graphviz
+pydot==1.4.1
+opencv-python==4.1.2.30
+pyglet==1.3.2
 
-##### Reinforcement Learning library
-
-# OpenAI gym is only needed in chapter 18.
-# There are a few dependencies you need to install first, check out:
-# https://github.com/openai/gym#installing-everything
-gym[atari,box2d,classic_control]==0.15.3
+#pyvirtualdisplay # needed in chapter 16, if on a headless server
+                  # (i.e., without screen, e.g., Colab or VM)
 
 
 ##### Additional utilities
 
-# Joblib is a set of tools to provide lightweight pipelining
-joblib==0.13.2
+# Efficient jobs (caching, parallelism, persistence)
+joblib==0.14.0
+
+# Easy http requests
+requests==2.22.0
+
+# Nice utility to diff Jupyter Notebooks.
+nbdime==1.1.0
 
 # May be useful with Pandas for complex "where" clauses (e.g., Pandas
 # tutorial).
 numexpr==2.7.0
 
-# Optional: these libraries can be useful in chapter 3, exercise 4.
+# Optional: these libraries can be useful in the classification chapter,
+# exercise 4.
 nltk==3.4.5
 urlextract==0.13.0
 
-# Needed in chapter 19.
-requests==2.22.0
-
-# Optional: nice utility to diff Jupyter Notebooks.
-#nbdime==1.1.0
-
 # Optional: tqdm displays nice progress bars, ipywidgets for tqdm's notebook support
-tqdm==4.36.1
+tqdm==4.40.0
 ipywidgets==7.5.1
