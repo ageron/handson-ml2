@@ -45,7 +45,7 @@ If you're on Windows, and you want to go through chapter 18 on Reinforcement Lea
 
 
 ## Start Jupyter
-You're almost there! You just need to register the `tf2` conda environment to Jupyter. The notebooks in this project will defaut to the environment named `python3`, so it's best to register this environment using the name `python3` (if you prefer to use another name, you will have to select it in the "Kernel > Change kernel..." menu in Jupyter every time you open a notebook):
+You're almost there! You just need to register the `tf2` conda environment to Jupyter. The notebooks in this project will default to the environment named `python3`, so it's best to register this environment using the name `python3` (if you prefer to use another name, you will have to select it in the "Kernel > Change kernel..." menu in Jupyter every time you open a notebook):
 
     $ python3 -m ipykernel install --user --name=python3
 
