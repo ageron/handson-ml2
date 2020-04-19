@@ -16,6 +16,9 @@ scikit-learn==0.22
 # Optional: the XGBoost library is only used in chapter 7
 xgboost==1.0.2
 
+# Optional: the transformers library is only using in chapter 16
+transformers==2.8.0
+
 ##### TensorFlow-related packages
 
 # If you have a TF-compatible GPU and you want to enable GPU support, then
@@ -88,6 +91,10 @@ numexpr==2.7.1
 # exercise 4.
 nltk==3.4.5
 urlextract==0.14.0
+
+# Optional: these libraries are only used in chapter 16
+spacy==2.2.4
+ftfy==5.7
 
 # Optional: tqdm displays nice progress bars, ipywidgets for tqdm's notebook support
 tqdm==4.43.0

@@ -34,9 +34,11 @@ dependencies:
   - widgetsnbextension=3.5
   - pip:
     - atari-py==0.2.6
+    - ftfy==5.7
     - gast==0.2.2
     - gym==0.17.1
     - opencv-python==4.2.0.32
+    - spacy==2.2.4
     - tensorboard==2.1.1
     - tensorflow-addons==0.8.3
     - tensorflow-data-validation==0.21.5
@@ -51,4 +53,5 @@ dependencies:
     - tensorflow==2.1.0 # or tensorflow-gpu if gpu
     - tf-agents==0.3.0
     - tfx==0.21.2
+    - transformers==2.8.0
     - urlextract==0.14.0
