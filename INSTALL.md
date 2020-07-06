@@ -27,7 +27,7 @@ If you have a TensorFlow-compatible GPU card (NVidia card with Compute Capabilit
 If you want to use a GPU then you should also edit environment.yml (or environment-windows.yml if you're on Windows), located at the root of the handson-ml2 project, replace tensorflow=2.0.0 with tensorflow-gpu=2.0.0, and replace tensorflow-serving-api==2.0.0 with tensorflow-serving-api-gpu==2.0.0. This will not be needed anymore when TensorFlow 2.1 is released.
 
 ## Create the tf2 Environment
-Next, make sure you're in the handson-ml2 directory and run the following command. It will create a new `conda` enviromnent containing every library you will need to run all the notebooks (by default, the environment will be named `tf2`, but you can choose another name using the `-n` option):
+Next, make sure you're in the handson-ml2 directory and run the following command. It will create a new `conda` environment containing every library you will need to run all the notebooks (by default, the environment will be named `tf2`, but you can choose another name using the `-n` option):
 
     $ conda env create -f environment.yml # or environment-windows.yml on Windows
 
