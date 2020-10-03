@@ -61,7 +61,7 @@ tf-agents==0.3.0
 
 ##### Image manipulation
 imageio==2.6.1
-Pillow==7.0.0
+Pillow>=7.1.0
 scikit-image==0.16.2
 graphviz==0.13.2
 pydot==1.4.1
