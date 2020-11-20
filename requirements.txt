@@ -2,71 +2,64 @@
 # on Windows or when using a GPU. Please see the installation
 # instructions in INSTALL.md
 
+
 ##### Core scientific packages
 jupyter==1.0.0
-matplotlib==3.1.3
-numpy==1.18.1
-pandas==1.0.3
-scipy==1.4.1
-
+matplotlib==3.3.2
+numpy==1.18.5
+pandas==1.1.3
+scipy==1.5.3
 
 ##### Machine Learning packages
-scikit-learn==0.22
+scikit-learn==0.23.2
 
 # Optional: the XGBoost library is only used in chapter 7
-xgboost==1.0.2
+xgboost==1.2.1
 
 # Optional: the transformers library is only using in chapter 16
-transformers==2.8.0
+transformers==3.3.1
 
 ##### TensorFlow-related packages
 
 # If you have a TF-compatible GPU and you want to enable GPU support, then
-# replace tensorflow with tensorflow-gpu, and replace tensorflow-serving-api
-# with tensorflow-serving-api-gpu.
+# replace tensorflow-serving-api with tensorflow-serving-api-gpu.
 # Your GPU must have CUDA Compute Capability 3.5 or higher support, and
 # you must install CUDA, cuDNN and more: see tensorflow.org for the detailed
 # installation instructions.
 
-tensorflow==2.1.0
-
+tensorflow==2.3.1
 # Optional: the TF Serving API library is just needed for chapter 19.
-tensorflow-serving-api==2.1.0
-#tensorflow-serving-api-gpu==2.1.0
+tensorflow-serving-api==2.3.0 # or tensorflow-serving-api-gpu if gpu
 
-tensorboard==2.1.1
-tensorboard-plugin-profile==2.2.0
-tensorflow-datasets==2.1.0
-tensorflow-hub==0.7.0
-tensorflow-probability==0.9.0
+tensorboard==2.3.0
+tensorboard-plugin-profile==2.3.0
+tensorflow-datasets==4.0.1
+tensorflow-hub==0.9.0
+tensorflow-probability==0.11.1
 
 # Optional: only used in chapter 13.
 # NOT AVAILABLE ON WINDOWS
-tfx==0.21.2
+tfx==0.24.1
 
 # Optional: only used in chapter 16.
 # NOT AVAILABLE ON WINDOWS
-tensorflow-addons==0.8.3
+tensorflow-addons==0.11.2
 
 ##### Reinforcement Learning library (chapter 18)
 
 # There are a few dependencies you need to install first, check out:
 # https://github.com/openai/gym#installing-everything
-gym[atari]==0.17.1
+gym[atari]==0.17.3
 # On Windows, install atari_py using:
 # pip install --no-index -f https://github.com/Kojoley/atari-py/releases atari_py
 
-tf-agents==0.3.0
-
+tf-agents==0.6.0
 
 ##### Image manipulation
-imageio==2.6.1
-Pillow==7.0.0
-scikit-image==0.16.2
-graphviz==0.13.2
-pydot==1.4.1
-opencv-python==4.2.0.32
-pyglet==1.5.0
+Pillow==8.0.0
+graphviz==0.14.2
+opencv-python==4.4.0.44
+pyglet==1.4.11
 
 #pyvirtualdisplay # needed in chapter 16, if on a headless server
                   # (i.e., without screen, e.g., Colab or VM)
@@ -78,10 +71,10 @@ pyglet==1.5.0
 joblib==0.14.1
 
 # Easy http requests
-requests==2.23.0
+requests==2.24.0
 
 # Nice utility to diff Jupyter Notebooks.
-nbdime==2.0.0
+nbdime==2.1.0
 
 # May be useful with Pandas for complex "where" clauses (e.g., Pandas
 # tutorial).
@@ -89,13 +82,21 @@ numexpr==2.7.1
 
 # Optional: these libraries can be useful in the classification chapter,
 # exercise 4.
-nltk==3.4.5
-urlextract==0.14.0
+nltk==3.5
+urlextract==1.1.0
 
 # Optional: these libraries are only used in chapter 16
-spacy==2.2.4
-ftfy==5.7
+ftfy==5.8
 
 # Optional: tqdm displays nice progress bars, ipywidgets for tqdm's notebook support
-tqdm==4.43.0
+tqdm==4.50.2
 ipywidgets==7.5.1
+
+
+
+# Specific lib versions to avoid conflicts
+attrs==19.3.0
+cloudpickle==1.3.0
+dill==0.3.1.1
+gast==0.3.3
+httplib2==0.17.4
