@@ -3,55 +3,22 @@ channels:
   - conda-forge
   - defaults
 dependencies:
-  - graphviz
+  - gast==0.2.2
   - imageio=2.6
   - ipython=7.12
-  - ipywidgets=7.5
-  - joblib=0.14
-  - jupyter=1.0
-  - matplotlib=3.1
-  - nbdime=2.0
-  - nltk=3.4
-  - numexpr=2.7
-  - numpy=1.18
-  - pandas=1.0
+  - ipywidgets==7.5.1
   - pillow=7.0
   - pip
   - psutil=5.7
   - py-xgboost=0.90
   - pydot=1.4
-  - pyglet=1.5
   - pyopengl=3.1
-  - python=3.7
   - python-graphviz
+  - python=3.7
   #- pyvirtualdisplay=0.2 # add if on headless server
-  - requests=2.22
   - scikit-image=0.16
-  - scikit-learn=0.22
-  - scipy=1.4
-  - tqdm=4.43
   - wheel
   - widgetsnbextension=3.5
+  - widgetsnbextension=3.5
   - pip:
-    - atari-py==0.2.6
-    - ftfy==5.7
-    - gast==0.2.2
-    - gym==0.17.1
-    - opencv-python==4.2.0.32
-    - spacy==2.2.4
-    - tensorboard==2.1.1
-    - tensorflow-addons==0.8.3
-    - tensorflow-data-validation==0.21.5
-    - tensorflow-datasets==2.1.0
-    - tensorflow-estimator==2.1.0
-    - tensorflow-hub==0.7.0
-    - tensorflow-metadata==0.21.1
-    - tensorflow-model-analysis==0.21.6
-    - tensorflow-probability==0.9.0
-    - tensorflow-serving-api==2.1.0 # or tensorflow-serving-api-gpu if gpu
-    - tensorflow-transform==0.21.2
-    - tensorflow==2.1.0 # or tensorflow-gpu if gpu
-    - tf-agents==0.3.0
-    - tfx==0.21.2
-    - transformers==2.8.0
-    - urlextract==0.14.0
+    - -r file:requirements.txt
