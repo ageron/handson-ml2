@@ -10,29 +10,29 @@ dependencies:
   - ipython=7.20 # a powerful Python shell
   - ipywidgets=7.6 # optionally used only in chapter 12 for tqdm in Jupyter
   - joblib=0.14 # used only in chapter 2 to save/load Scikit-Learn models
-  - jupyter=1.0.0 # to edit and run Jupyter notebooks
-  - matplotlib=3.3.4 # beautiful plots. See tutorial tools_matplotlib.ipynb
-  - nbdime=2.1.0 # optional tool to diff Jupyter notebooks
-  - nltk=3.4.4 # optionally used in chapter 3, exercise 4
-  - numexpr=2.7.2 # used only in the Pandas tutorial for numerical expressions
-  - numpy=1.19.5 # Powerful n-dimensional arrays and numerical computing tools
-  - opencv=4.5.1 # used only in chapter 18 by TF Agents for image preprocessing
-  - pandas=1.2.2 # data analysis and manipulation tool
-  - pillow=8.1.0 # image manipulation library, (used by matplotlib.image.imread)
+  - jupyter=1.0 # to edit and run Jupyter notebooks
+  - matplotlib=3.3 # beautiful plots. See tutorial tools_matplotlib.ipynb
+  - nbdime=2.1 # optional tool to diff Jupyter notebooks
+  - nltk=3.4 # optionally used in chapter 3, exercise 4
+  - numexpr=2.7 # used only in the Pandas tutorial for numerical expressions
+  - numpy=1.19 # Powerful n-dimensional arrays and numerical computing tools
+  - opencv=4.5 # used only in chapter 18 by TF Agents for image preprocessing
+  - pandas=1.2 # data analysis and manipulation tool
+  - pillow=8.1 # image manipulation library, (used by matplotlib.image.imread)
   - pip # Python's package-management system
-  - py-xgboost=1.3.0 # used only in chapter 7 for optimized Gradient Boosting
-  - pyglet=1.5.15 # used only in chapter 18 to render environments
-  - pyopengl=3.1.5 # used only in chapter 18 to render environments
+  - py-xgboost=1.3 # used only in chapter 7 for optimized Gradient Boosting
+  - pyglet=1.5 # used only in chapter 18 to render environments
+  - pyopengl=3.1 # used only in chapter 18 to render environments
   - python=3.7 # Python! Not using latest version as some libs lack support
   - python-graphviz # used only in chapter 6 for dot files
  #- pyvirtualdisplay=1.3 # used only in chapter 18 if on headless server
-  - requests=2.25.1 # used only in chapter 19 for REST API queries
-  - scikit-learn=0.24.1 # machine learning library
-  - scipy=1.6.0 # scientific/technical computing library
-  - tqdm=4.56.1 # a progress bar library
-  - transformers=4.3.2 # Natural Language Processing lib for TF or PyTorch
+  - requests=2.25 # used only in chapter 19 for REST API queries
+  - scikit-learn=0.24 # machine learning library
+  - scipy=1.6 # scientific/technical computing library
+  - tqdm=4.56 # a progress bar library
+  - transformers=4.3 # Natural Language Processing lib for TF or PyTorch
   - wheel # built-package format for pip
-  - widgetsnbextension=3.5.1 # interactive HTML widgets for Jupyter notebooks
+  - widgetsnbextension=3.5 # interactive HTML widgets for Jupyter notebooks
   - pip:
     - tensorboard-plugin-profile==2.4.0 # profiling plugin for TensorBoard
     - tensorboard==2.4.1 # TensorFlow's visualization toolkit
