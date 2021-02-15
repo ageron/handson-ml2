@@ -20,7 +20,7 @@ dependencies:
   - pandas=1.2 # data analysis and manipulation tool
   - pillow=8.1 # image manipulation library, (used by matplotlib.image.imread)
   - pip # Python's package-management system
-  - py-xgboost=1.3 # used only in chapter 7 for optimized Gradient Boosting
+  - py-xgboost=0.90 # used only in chapter 7 for optimized Gradient Boosting
   - pyglet=1.5 # used only in chapter 18 to render environments
   - pyopengl=3.1 # used only in chapter 18 to render environments
   - python=3.7 # Python! Not using latest version as some libs lack support
