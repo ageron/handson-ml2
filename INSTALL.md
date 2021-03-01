@@ -24,24 +24,14 @@ Once Anaconda or miniconda is installed, then run the following command to updat
 ## Install the GPU Driver and Libraries
 If you have a TensorFlow-compatible GPU card (NVidia card with Compute Capability ≥ 3.5), and you want TensorFlow to use it, then you should download the latest driver for your card from [nvidia.com](https://www.nvidia.com/Download/index.aspx?lang=en-us) and install it. You will also need NVidia's CUDA and cuDNN libraries, but the good news is that they will be installed automatically when you install the tensorflow-gpu package from Anaconda. However, if you don't use Anaconda, you will have to install them manually. If you hit any roadblock, see TensorFlow's [GPU installation instructions](https://tensorflow.org/install/gpu) for more details.
 
-If you want to use a GPU then you should also edit environment.yml (or environment-windows.yml if you're on Windows), located at the root of the handson-ml2 project, replace tensorflow=2.0.0 with tensorflow-gpu=2.0.0, and replace tensorflow-serving-api==2.0.0 with tensorflow-serving-api-gpu==2.0.0. This will not be needed anymore when TensorFlow 2.1 is released.
-
 ## Create the tf2 Environment
 Next, make sure you're in the handson-ml2 directory and run the following command. It will create a new `conda` environment containing every library you will need to run all the notebooks (by default, the environment will be named `tf2`, but you can choose another name using the `-n` option):
 
-    $ conda env create -f environment.yml # or environment-windows.yml on Windows
+    $ conda env create -f environment.yml
 
 Next, activate the new environment:
 
     $ conda activate tf2
-
-## Windows
-If you're on Windows, and you want to go through chapter 18 on Reinforcement Learning, then you will also need to run the following command. It installs a Windows-compatible fork of the atari-py library.
-
-    $ pip install --no-index -f https://github.com/Kojoley/atari-py/releases atari_py
-
-
-> **Warning**: TensorFlow Transform (used in chapter 13) and TensorFlow-AddOns (used in chapter 16) are not yet available on Windows, but the TensorFlow team is working on it.
 
 
 ## Start Jupyter
