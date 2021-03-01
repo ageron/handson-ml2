@@ -3,55 +3,45 @@ channels:
   - conda-forge
   - defaults
 dependencies:
-  - graphviz
-  - imageio=2.6
-  - ipython=7.12
-  - ipywidgets=7.5
-  - joblib=0.14
-  - jupyter=1.0
-  - matplotlib=3.1
-  - nbdime=2.0
-  - nltk=3.4
-  - numexpr=2.7
-  - numpy=1.18
-  - pandas=1.0
-  - pillow=7.0
-  - pip
-  - psutil=5.7
-  - py-xgboost=0.90
-  - pydot=1.4
-  - pyglet=1.5
-  - pyopengl=3.1
-  - python=3.7
-  - python-graphviz
-  #- pyvirtualdisplay=0.2 # add if on headless server
-  - requests=2.22
-  - scikit-image=0.16
-  - scikit-learn=0.22
-  - scipy=1.4
-  - tqdm=4.43
-  - wheel
-  - widgetsnbextension=3.5
+  - atari_py=0.2 # used only in chapter 18
+  - ftfy=5.8 # used only in chapter 16 by the transformers library
+  - graphviz # used only in chapter 6 for dot files
+  - gym=0.18 # used only in chapter 18
+  - ipython=7.20 # a powerful Python shell
+  - ipywidgets=7.6 # optionally used only in chapter 12 for tqdm in Jupyter
+  - joblib=0.14 # used only in chapter 2 to save/load Scikit-Learn models
+  - jupyter=1.0 # to edit and run Jupyter notebooks
+  - matplotlib=3.3 # beautiful plots. See tutorial tools_matplotlib.ipynb
+  - nbdime=2.1 # optional tool to diff Jupyter notebooks
+  - nltk=3.4 # optionally used in chapter 3, exercise 4
+  - numexpr=2.7 # used only in the Pandas tutorial for numerical expressions
+  - numpy=1.19 # Powerful n-dimensional arrays and numerical computing tools
+  - opencv=4.5 # used only in chapter 18 by TF Agents for image preprocessing
+  - pandas=1.2 # data analysis and manipulation tool
+  - pillow=8.1 # image manipulation library, (used by matplotlib.image.imread)
+  - pip # Python's package-management system
+  - py-xgboost=0.90 # used only in chapter 7 for optimized Gradient Boosting
+  - pyglet=1.5 # used only in chapter 18 to render environments
+  - pyopengl=3.1 # used only in chapter 18 to render environments
+  - python=3.7 # Python! Not using latest version as some libs lack support
+  - python-graphviz # used only in chapter 6 for dot files
+ #- pyvirtualdisplay=1.3 # used only in chapter 18 if on headless server
+  - requests=2.25 # used only in chapter 19 for REST API queries
+  - scikit-learn=0.24 # machine learning library
+  - scipy=1.6 # scientific/technical computing library
+  - tqdm=4.56 # a progress bar library
+  - transformers=4.3 # Natural Language Processing lib for TF or PyTorch
+  - wheel # built-package format for pip
+  - widgetsnbextension=3.5 # interactive HTML widgets for Jupyter notebooks
   - pip:
-    - atari-py==0.2.6
-    - ftfy==5.7
-    - gast==0.2.2
-    - gym==0.17.1
-    - opencv-python==4.2.0.32
-    - spacy==2.2.4
-    - tensorboard==2.1.1
-    - tensorflow-addons==0.8.3
-    - tensorflow-data-validation==0.21.5
-    - tensorflow-datasets==2.1.0
-    - tensorflow-estimator==2.1.0
-    - tensorflow-hub==0.7.0
-    - tensorflow-metadata==0.21.1
-    - tensorflow-model-analysis==0.21.6
-    - tensorflow-probability==0.9.0
-    - tensorflow-serving-api==2.1.0 # or tensorflow-serving-api-gpu if gpu
-    - tensorflow-transform==0.21.2
-    - tensorflow==2.1.0 # or tensorflow-gpu if gpu
-    - tf-agents==0.3.0
-    - tfx==0.21.2
-    - transformers==2.8.0
-    - urlextract==0.14.0
+    - tensorboard-plugin-profile==2.4.0 # profiling plugin for TensorBoard
+    - tensorboard==2.4.1 # TensorFlow's visualization toolkit
+    - tensorflow-addons==0.12.1 # used only in chapter 16 for a seq2seq impl.
+    - tensorflow-datasets==3.0.0 # datasets repository, ready to use
+    - tensorflow-hub==0.9.0 # trained ML models repository, ready to use
+    - tensorflow-probability==0.12.1 # Optional. Probability/Stats lib.
+    - tensorflow-serving-api==2.4.1 # or tensorflow-serving-api-gpu if gpu
+    - tensorflow==2.4.1 # Deep Learning library
+    - tf-agents==0.7.1 # Reinforcement Learning lib based on TensorFlow
+    - tfx==0.27.0 # platform to deploy production ML pipelines
+    - urlextract==1.2.0 # optionally used in chapter 3, exercise 4

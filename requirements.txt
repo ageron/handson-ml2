@@ -5,19 +5,19 @@
 
 ##### Core scientific packages
 jupyter==1.0.0
-matplotlib==3.3.2
-numpy==1.18.5
-pandas==1.1.3
-scipy==1.5.3
+matplotlib==3.3.4
+numpy==1.19.5
+pandas==1.2.2
+scipy==1.6.0
 
 ##### Machine Learning packages
-scikit-learn==0.23.2
+scikit-learn==0.24.1
 
 # Optional: the XGBoost library is only used in chapter 7
-xgboost==1.2.1
+xgboost==1.3.3
 
 # Optional: the transformers library is only using in chapter 16
-transformers==3.3.1
+transformers==4.3.2
 
 ##### TensorFlow-related packages
 
@@ -27,39 +27,39 @@ transformers==3.3.1
 # you must install CUDA, cuDNN and more: see tensorflow.org for the detailed
 # installation instructions.
 
-tensorflow==2.3.1
+tensorflow==2.4.1
 # Optional: the TF Serving API library is just needed for chapter 19.
-tensorflow-serving-api==2.3.0 # or tensorflow-serving-api-gpu if gpu
+tensorflow-serving-api==2.4.1 # or tensorflow-serving-api-gpu if gpu
 
-tensorboard==2.3.0
-tensorboard-plugin-profile==2.3.0
-tensorflow-datasets==4.0.1
+tensorboard==2.4.1
+tensorboard-plugin-profile==2.4.0
+tensorflow-datasets==3.0.0
 tensorflow-hub==0.9.0
-tensorflow-probability==0.11.1
+tensorflow-probability==0.12.1
 
 # Optional: only used in chapter 13.
 # NOT AVAILABLE ON WINDOWS
-tfx==0.24.1
+tfx==0.27.0
 
 # Optional: only used in chapter 16.
 # NOT AVAILABLE ON WINDOWS
-tensorflow-addons==0.11.2
+tensorflow-addons==0.12.1
 
 ##### Reinforcement Learning library (chapter 18)
 
 # There are a few dependencies you need to install first, check out:
 # https://github.com/openai/gym#installing-everything
-gym[atari]==0.17.3
+gym[atari]==0.18.0
 # On Windows, install atari_py using:
 # pip install --no-index -f https://github.com/Kojoley/atari-py/releases atari_py
 
-tf-agents==0.6.0
+tf-agents==0.7.1
 
 ##### Image manipulation
-Pillow==8.0.0
-graphviz==0.14.2
-opencv-python==4.4.0.44
-pyglet==1.4.11
+Pillow==7.2.0
+graphviz==0.16
+opencv-python==4.5.1.48
+pyglet==1.5.0
 
 #pyvirtualdisplay # needed in chapter 16, if on a headless server
                   # (i.e., without screen, e.g., Colab or VM)
@@ -71,32 +71,23 @@ pyglet==1.4.11
 joblib==0.14.1
 
 # Easy http requests
-requests==2.24.0
+requests==2.25.1
 
 # Nice utility to diff Jupyter Notebooks.
 nbdime==2.1.0
 
 # May be useful with Pandas for complex "where" clauses (e.g., Pandas
 # tutorial).
-numexpr==2.7.1
+numexpr==2.7.2
 
 # Optional: these libraries can be useful in the classification chapter,
 # exercise 4.
 nltk==3.5
-urlextract==1.1.0
+urlextract==1.2.0
 
 # Optional: these libraries are only used in chapter 16
 ftfy==5.8
 
 # Optional: tqdm displays nice progress bars, ipywidgets for tqdm's notebook support
-tqdm==4.50.2
-ipywidgets==7.5.1
-
-
-
-# Specific lib versions to avoid conflicts
-attrs==19.3.0
-cloudpickle==1.3.0
-dill==0.3.1.1
-gast==0.3.3
-httplib2==0.17.4
+tqdm==4.56.1
+ipywidgets==7.6.3

@@ -5,6 +5,7 @@
 *.pyc
 .DS_Store
 .ipynb_checkpoints
+.vscode/
 checkpoint
 logs/*
 tf_logs/*
