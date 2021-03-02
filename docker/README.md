@@ -2,13 +2,11 @@
 # Hands-on Machine Learning in Docker
 
 This is the Docker configuration which allows you to run and tweak the book's notebooks without installing any dependencies on your machine!<br/>
-OK, any except `docker`. With `docker-compose`. Well, you may also want `make` (but it is only used as thin layer to call a few simple `docker-compose` commands, so it is optional).
+OK, any except `docker` and `docker-compose`.
 
 ## Prerequisites
 
-As stated, the two things you need are `docker` and `docker-compose`.
-
-Follow the instructions on [Install Docker](https://docs.docker.com/engine/installation/) and [Install Docker Compose](https://docs.docker.com/compose/install/) for your environment if you haven't got `docker` already.
+Follow the instructions on [Install Docker](https://docs.docker.com/engine/installation/) and [Install Docker Compose](https://docs.docker.com/compose/install/) for your environment if you haven't got `docker` and `docker-compose` already.
 
 Some general knowledge about `docker` infrastructure might be useful (that's an interesting topic on its own) but is not strictly *required* to just run the notebooks.
 
@@ -16,19 +14,52 @@ Some general knowledge about `docker` infrastructure might be useful (that's an 
 
 ### Prepare the image (once)
 
-Switch to `docker` directory here and run `make build` (or `docker-compose build`) to build your docker image. That may take some time but is only required once. Or perhaps a few times after you tweak something in a `Dockerfile`.
+The first option is to pull the image from Docker Hub (this will download over 6 GB of data):
 
-After the process is finished you have a `handson-ml2` image, that will be the base for your experiments. You can confirm that looking on results of `docker images` command.
+```bash
+$ docker pull ageron/handson-ml2
+$ docker tag ageron/handson-ml2 handson-ml2
+```
+
+Alternatively, you can build the image yourself. This will be slower, but it will ensure the image is up to date, with the latest libraries. For this, assuming you already downloaded this project into the directory `/path/to/project/handson-ml2`:
+
+```bash
+$ cd /path/to/project/handson-ml2/docker
+$ docker-compose build
+```
+
+This will take quite a while, but is only required once.
+
+After the process is finished you have a `handson-ml2` image, that will be the base for your experiments. You can confirm that by running the following command:
+
+```bash
+$ docker images
+REPOSITORY        TAG                 IMAGE ID            CREATED             SIZE
+handson-ml2       latest              6c4dc2c7c516        2 minutes ago       6.49GB
+```
 
 ### Run the notebooks
 
-Run `make run` (or just `docker-compose up`) to start the jupyter server inside the container (also named `handson-ml2`, same as image). Just point your browser to the URL printed on the screen (or just <http://localhost:8888> if you enabled password authentication) and you're ready to play with the book's code!
+Still assuming you already downloaded this project into the directory `/path/to/project/handson-ml2`, run the following commands to start the Jupyter server inside the container (it is also named `handson-ml2`, just like the image):
+
+```bash
+$ cd /path/to/project/handson-ml2/docker
+$ docker-compose up
+```
+
+Next, just point your browser to the URL printed on the screen (or go to <http://localhost:8888> if you enabled password authentication inside the `jupyter_notebook_config.py` file, before building the image) and you're ready to play with the book's code!
 
 The server runs in the directory containing the notebooks, and the changes you make from the browser will be persisted there.
 
 You can close the server just by pressing `Ctrl-C` in terminal window.
 
-### Run additional commands in container
+### Using `make` (optional)
+
+If you have `make` installed on your computer, you can use it as a thin layer to run `docker-compose` commands. For example, executing `make rebuild` will actually run `docker-compose build --no-cache`, which will rebuild the image without using the cache. This ensures that your image is based on the latest version of the `continuumio/miniconda3` image which the `handson-ml2` image is based on.
+
+If you don't have `make` (and you don't want to install it), just examine the contents of `Makefile` to see which `docker-compose` commands you can run instead.
+
+### Run additional commands in the container
 
 Run `make exec` (or `docker-compose exec handson-ml2 bash`) while the server is running to run an additional `bash` shell inside the `handson-ml2` container. Now you're inside the environment prepared within the image.
 
