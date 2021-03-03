@@ -71,3 +71,56 @@ You can see changes you made relative to the version in git using `git diff` whi
 
 You may also try `nbd NOTEBOOK_NAME.ipynb` command (custom, see bashrc file) to compare one of your notebooks with its `checkpointed` version.<br/>
 To be precise, the output will tell you *what modifications should be re-played on the **manually saved** version of the notebook (located in `.ipynb_checkpoints` subdirectory) to update it to the **current** i.e. **auto-saved** version (given as command's argument - located in working directory)*.
+
+## GPU Support on Linux (experimental)
+
+If you're using Linux, and you have a TensorFlow-compatible GPU card (NVidia card with Compute Capability ≥ 3.5) that you would like TensorFlow to use inside the docker container, then you should download and install the latest driver for your card from [nvidia.com](https://www.nvidia.com/Download/index.aspx?lang=en-us). You will also need to install [NVidia Docker support](https://github.com/NVIDIA/nvidia-docker): if you are using Docker 19.03 or above, you must install the `nvidia-container-toolkit` package, and for earlier versions, you must install `nvidia-docker2`.
+
+To build the image, edit `docker-compose.yml`, replace the line `dockerfile: ./docker/Dockerfile` with `dockerfile: ./docker/Dockerfile.gpu`, and then run:
+
+```bash
+$ cd /path/to/project/handson-ml2/docker
+$ docker-compose build
+```
+
+To run the image, it's depends. If you have `docker-compose` version 1.28 or above, that's great! You can simply uncomment the `deploy` section in `docker-compose.yml`, and then run:
+
+```bash
+$ cd /path/to/project/handson-ml2/docker
+$ docker-compose up
+[...]
+     or http://127.0.0.1:8888/?token=[...]
+```
+
+However, if you have an earlier version of `docker-compose`, it's simpler to use `docker run` directly. If you are using Docker 19.03 or above, you can run:
+
+```bash
+$ cd /path/to/project/handson-ml2
+$ docker run --name handson-ml2 --gpus all -p 8888:8888 -p 6006:6006 --log-opt mode=non-blocking --log-opt max-buffer-size=50m -d -v `pwd`:/home/devel/handson-ml2 handson-ml2 /opt/conda/envs/tf2/bin/jupyter notebook --ip='0.0.0.0' --port=8888 --no-browser
+```
+
+If you are using an older version of Docker, then replace `--gpus all` with `--runtime=nvidia`.
+
+Then, display the container's logs and point your browser to the URL printed on the screen:
+
+```bash
+$ docker logs handson-ml2
+[I 09:07:10.805 NotebookApp] Writing notebook server cookie secret to /home/devel/.local/share/jupyter/runtime/notebook_cookie_secret
+[...]
+     or http://127.0.0.1:8888/?token=[...]
+```
+
+If everything goes well, Jupyter should appear, and if you open a notebook and execute the following code, it should show a GPU device in the list:
+
+```python
+import tensorflow as tf
+
+tf.config.list_physical_devices()
+```
+
+Lastly, to stop and destroy the container (but not the image), run:
+
+```bash
+$ docker stop handson-ml2
+$ docker rm handson-ml2
+```

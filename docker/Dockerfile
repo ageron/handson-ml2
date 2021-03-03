@@ -2,12 +2,20 @@ FROM continuumio/miniconda3:latest
 
 RUN apt-get update && apt-get upgrade -y \
     && apt-get install -y \
-        libpq-dev \
         build-essential \
+        cmake \
+        ffmpeg \
         git \
+        libboost-all-dev \
+        libjpeg-dev \
+        libpq-dev \
+        libsdl2-dev swig \
         sudo \
-        cmake zlib1g-dev libjpeg-dev xvfb ffmpeg xorg-dev libboost-all-dev libsdl2-dev swig \
-        unzip zip \
+        unzip \
+        xorg-dev \
+        xvfb \
+        zip \
+        zlib1g-dev \
     && rm -rf /var/lib/apt/lists/*
 
 COPY environment.yml /tmp/

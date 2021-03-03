@@ -3,7 +3,7 @@ services:
   handson-ml2:
     build:
       context: ../
-      dockerfile: ./docker/Dockerfile
+      dockerfile: ./docker/Dockerfile #Dockerfile.gpu
       args:
         - username=devel
         - userid=1000
@@ -20,3 +20,8 @@ services:
     volumes:
       - ../:/home/devel/handson-ml2
     command: /opt/conda/envs/tf2/bin/jupyter notebook --ip='0.0.0.0' --port=8888 --no-browser
+    #deploy:
+    #  resources:
+    #    reservations:
+    #      devices:
+    #      - capabilities: [gpu]

@@ -1,0 +1,195 @@
+# This Dockerfile includes sections from tensorflow/tensorflow:latest-gpu's Dockerfile:
+# https://github.com/tensorflow/tensorflow/blob/master/tensorflow/tools/dockerfiles/dockerfiles/gpu.Dockerfile
+# and sections from continuumio/miniconda3:latest's Dockerfile:
+# https://github.com/ContinuumIO/docker-images/blob/master/miniconda3/debian/Dockerfile
+
+
+# First we need CUDA and everything else needed to support GPUs
+
+###############################################
+#### FROM tensorflow/tensorflow:latest-gpu ####
+###############################################
+ARG UBUNTU_VERSION=18.04
+
+ARG ARCH=
+ARG CUDA=11.0
+FROM nvidia/cuda${ARCH:+-$ARCH}:${CUDA}-base-ubuntu${UBUNTU_VERSION} as base
+# ARCH and CUDA are specified again because the FROM directive resets ARGs
+# (but their default value is retained if set previously)
+ARG ARCH
+ARG CUDA
+ARG CUDNN=8.0.4.30-1
+ARG CUDNN_MAJOR_VERSION=8
+ARG LIB_DIR_PREFIX=x86_64
+ARG LIBNVINFER=7.1.3-1
+ARG LIBNVINFER_MAJOR_VERSION=7
+
+# Needed for string substitution
+SHELL ["/bin/bash", "-c"]
+# Pick up some TF dependencies
+# [HOML2] Tweaked for handson-ml2: added all the libs before build-essentials
+RUN apt-get update -q && apt-get install -q -y --no-install-recommends \
+        bzip2 \
+        ca-certificates \
+        cmake \
+        ffmpeg \
+        git \
+        libboost-all-dev \
+        libglib2.0-0 \
+        libjpeg-dev \
+        libpq-dev \
+        libsdl2-dev \
+        libsm6 \
+        libxext6 \
+        libxrender1 \
+        mercurial \
+        subversion \
+        sudo \
+        swig \
+        wget \
+        xorg-dev \
+        xvfb \
+        zip \
+        zlib1g-dev \
+        build-essential \
+        cuda-command-line-tools-${CUDA/./-} \
+        libcublas-${CUDA/./-} \
+        cuda-nvrtc-${CUDA/./-} \
+        libcufft-${CUDA/./-} \
+        libcurand-${CUDA/./-} \
+        libcusolver-${CUDA/./-} \
+        libcusparse-${CUDA/./-} \
+        curl \
+        libcudnn8=${CUDNN}+cuda${CUDA} \
+        libfreetype6-dev \
+        libhdf5-serial-dev \
+        libzmq3-dev \
+        pkg-config \
+        software-properties-common \
+        unzip
+
+# Install TensorRT if not building for PowerPC
+RUN [[ "${ARCH}" = "ppc64le" ]] || { apt-get update && \
+        apt-get install -y --no-install-recommends libnvinfer${LIBNVINFER_MAJOR_VERSION}=${LIBNVINFER}+cuda${CUDA} \
+        libnvinfer-plugin${LIBNVINFER_MAJOR_VERSION}=${LIBNVINFER}+cuda${CUDA} \
+        && apt-get clean \
+        && rm -rf /var/lib/apt/lists/*; }
+
+# For CUDA profiling, TensorFlow requires CUPTI.
+ENV LD_LIBRARY_PATH /usr/local/cuda/extras/CUPTI/lib64:/usr/local/cuda/lib64:$LD_LIBRARY_PATH
+
+# Link the libcuda stub to the location where tensorflow is searching for it and reconfigure
+# dynamic linker run-time bindings
+RUN ln -s /usr/local/cuda/lib64/stubs/libcuda.so /usr/local/cuda/lib64/stubs/libcuda.so.1 \
+    && echo "/usr/local/cuda/lib64/stubs" > /etc/ld.so.conf.d/z-cuda-stubs.conf \
+    && ldconfig
+
+# [HOML2] Tweaked for handson-ml2: removed Python3 & TensorFlow installation using pip
+
+#################################################
+#### End of tensorflow/tensorflow:latest-gpu ####
+#################################################
+
+ENV LANG=C.UTF-8 LC_ALL=C.UTF-8
+ENV PATH /opt/conda/bin:/opt/conda/envs/tf2/bin:$PATH
+
+# Next we need to install miniconda
+
+############################################
+#### FROM continuumio/miniconda3:latest ####
+############################################
+
+# [HOML2] Tweaked for handson-ml2: removed the beginning of the Dockerfile
+CMD [ "/bin/bash" ]
+
+# Leave these args here to better use the Docker build cache
+ARG CONDA_VERSION=py38_4.9.2
+ARG CONDA_MD5=122c8c9beb51e124ab32a0fa6426c656
+
+RUN wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-${CONDA_VERSION}-Linux-x86_64.sh -O miniconda.sh && \
+    echo "${CONDA_MD5}  miniconda.sh" > miniconda.md5 && \
+    if ! md5sum --status -c miniconda.md5; then exit 1; fi && \
+    mkdir -p /opt && \
+    sh miniconda.sh -b -p /opt/conda && \
+    rm miniconda.sh miniconda.md5 && \
+    ln -s /opt/conda/etc/profile.d/conda.sh /etc/profile.d/conda.sh && \
+    echo ". /opt/conda/etc/profile.d/conda.sh" >> ~/.bashrc && \
+    echo "conda activate base" >> ~/.bashrc && \
+    find /opt/conda/ -follow -type f -name '*.a' -delete && \
+    find /opt/conda/ -follow -type f -name '*.js.map' -delete && \
+    /opt/conda/bin/conda clean -afy
+
+##############################################
+#### End of continuumio/miniconda3:latest ####
+##############################################
+
+# Now we're ready to create our conda environment
+
+COPY environment.yml /tmp/
+RUN conda update -y -n base conda \
+    && echo '    - pyvirtualdisplay' >> /tmp/environment.yml \
+    && conda env create -f /tmp/environment.yml \
+    && conda clean -y -t \
+    && rm /tmp/environment.yml
+
+ARG username
+ARG userid
+
+ARG home=/home/${username}
+ARG workdir=${home}/handson-ml2
+
+RUN adduser ${username} --uid ${userid} --gecos '' --disabled-password \
+    && echo "${username} ALL=(root) NOPASSWD:ALL" > /etc/sudoers.d/${username} \
+    && chmod 0440 /etc/sudoers.d/${username}
+
+WORKDIR ${workdir}
+RUN chown ${username}:${username} ${workdir}
+
+USER ${username}
+WORKDIR ${workdir}
+
+
+# The config below enables diffing notebooks with nbdiff (and nbdiff support
+# in git diff command) after connecting to the container by "make exec" (or
+# "docker-compose exec handson-ml2 bash")
+#       You may also try running:
+#         nbdiff NOTEBOOK_NAME.ipynb
+#       to get nbdiff between checkpointed version and current version of the
+# given notebook.
+
+RUN git-nbdiffdriver config --enable --global
+
+# INFO: Optionally uncomment any (one) of the following RUN commands below to ignore either
+#       metadata or details in nbdiff within git diff
+#RUN git config --global diff.jupyternotebook.command 'git-nbdiffdriver diff --ignore-metadata'
+RUN git config --global diff.jupyternotebook.command 'git-nbdiffdriver diff --ignore-details'
+
+
+COPY docker/bashrc.bash /tmp/
+RUN cat /tmp/bashrc.bash >> ${home}/.bashrc \
+    && echo "export PATH=\"${workdir}/docker/bin:$PATH\"" >> ${home}/.bashrc \
+    && sudo rm /tmp/bashrc.bash
+
+
+# INFO: Uncomment lines below to enable automatic save of python-only and html-only
+#       exports alongside the notebook
+#COPY docker/jupyter_notebook_config.py /tmp/
+#RUN cat /tmp/jupyter_notebook_config.py >> ${home}/.jupyter/jupyter_notebook_config.py
+#RUN sudo rm /tmp/jupyter_notebook_config.py
+
+
+# INFO: Uncomment the RUN command below to disable git diff paging
+#RUN git config --global core.pager ''
+
+
+# INFO: Uncomment the RUN command below for easy and constant notebook URL (just localhost:8888)
+#       That will switch Jupyter to using empty password instead of a token.
+#       To avoid making a security hole you SHOULD in fact not only uncomment but
+#       regenerate the hash for your own non-empty password and replace the hash below.
+#       You can compute a password hash in any notebook, just run the code:
+#          from notebook.auth import passwd
+#          passwd()
+#       and take the hash from the output
+#RUN mkdir -p ${home}/.jupyter && \
+#    echo 'c.NotebookApp.password = u"sha1:c6bbcba2d04b:f969e403db876dcfbe26f47affe41909bd53392e"' \
+#    >> ${home}/.jupyter/jupyter_notebook_config.py
