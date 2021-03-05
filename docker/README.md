@@ -14,7 +14,7 @@ Some general knowledge about `docker` infrastructure might be useful (that's an 
 
 ### Prepare the image (once)
 
-The first option is to pull the image from Docker Hub (this will download over 6 GB of data):
+The first option is to pull the image from Docker Hub (this will download over 2.3 GB of data):
 
 ```bash
 $ docker pull ageron/handson-ml2
@@ -76,14 +76,21 @@ To be precise, the output will tell you *what modifications should be re-played 
 
 If you're using Linux, and you have a TensorFlow-compatible GPU card (NVidia card with Compute Capability ≥ 3.5) that you would like TensorFlow to use inside the docker container, then you should download and install the latest driver for your card from [nvidia.com](https://www.nvidia.com/Download/index.aspx?lang=en-us). You will also need to install [NVidia Docker support](https://github.com/NVIDIA/nvidia-docker): if you are using Docker 19.03 or above, you must install the `nvidia-container-toolkit` package, and for earlier versions, you must install `nvidia-docker2`.
 
-To build the image, edit `docker-compose.yml`, replace the line `dockerfile: ./docker/Dockerfile` with `dockerfile: ./docker/Dockerfile.gpu`, and then run:
+If you want to pull the prebuilt image from Docker Hub (this will download over 4 GB of data):
+
+```bash
+$ docker pull ageron/handson-ml2:latest-gpu
+$ docker tag ageron/handson-ml2:latest-gpu handson-ml2
+```
+
+If you prefer to build the image yourself, edit `docker-compose.yml`, replace the line `dockerfile: ./docker/Dockerfile` with `dockerfile: ./docker/Dockerfile.gpu`, and then run the following commands (assuming this project is located at `/path/to/project/handson-ml2`):
 
 ```bash
 $ cd /path/to/project/handson-ml2/docker
 $ docker-compose build
 ```
 
-To run the image, it's depends. If you have `docker-compose` version 1.28 or above, that's great! You can simply uncomment the `deploy` section in `docker-compose.yml`, and then run:
+To run the image, it depends. If you have `docker-compose` version 1.28 or above, that's great! You can simply uncomment the `deploy` section in `docker-compose.yml`, and then run:
 
 ```bash
 $ cd /path/to/project/handson-ml2/docker
