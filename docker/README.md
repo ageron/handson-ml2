@@ -74,6 +74,8 @@ To be precise, the output will tell you *what modifications should be re-played 
 
 ## GPU Support on Linux (experimental)
 
+### Prerequisites
+
 If you're running on Linux, and you have a TensorFlow-compatible GPU card (NVidia card with Compute Capability ≥ 3.5) that you would like TensorFlow to use inside the Docker container, then you should download and install the latest driver for your card from [nvidia.com](https://www.nvidia.com/Download/index.aspx?lang=en-us). You will also need to install [NVidia Docker support](https://github.com/NVIDIA/nvidia-docker): if you are using Docker 19.03 or above, you must install the `nvidia-container-toolkit` package, and for earlier versions, you must install `nvidia-docker2`.
 
 Next, edit the `docker-compose.yml` file:
@@ -87,7 +89,9 @@ $ edit environment.yml  # use your favorite editor
 * Replace `image: ageron/handson-ml2:latest` with `image: ageron/handson-ml2:latest-gpu`
 * If you want to use `docker-compose`, you will need version 1.28 or above for GPU support, and you must uncomment the whole `deploy` section in `docker-compose.yml`. 
 
-Next, if you want to pull the prebuilt image from Docker Hub (this will download over 4 GB of data):
+### Prepare the image (once)
+
+If you want to pull the prebuilt image from Docker Hub (this will download over 4 GB of data):
 
 ```bash
 $ docker pull ageron/handson-ml2:latest-gpu
@@ -100,7 +104,9 @@ $ cd /path/to/project/handson-ml2/docker
 $ docker-compose build
 ```
 
-To run the image, it depends. If you have `docker-compose` version 1.28 or above, that's great! You can simply run:
+### Run the notebooks with `docker-compose` (version 1.28 or above)
+
+If you have `docker-compose` version 1.28 or above, that's great! You can simply run:
 
 ```bash
 $ cd /path/to/project/handson-ml2/docker
@@ -117,36 +123,29 @@ import tensorflow as tf
 tf.config.list_physical_devices("GPU")
 ```
 
-To stop and remove the container, just run:
+To stop the server, just press Ctrl-C.
 
-```bash
-$ docker-compose stop
-```
+### Run the notebooks without `docker-compose`
 
-However, if you have a version of `docker-compose` earlier than 1.28, you will have to use `docker run` directly. If you are using Docker 19.03 or above, you can run:
+If you have a version of `docker-compose` earlier than 1.28, you will have to use `docker run` directly.
+
+If you are using Docker 19.03 or above, you can run:
 
 ```bash
 $ cd /path/to/project/handson-ml2
-$ docker run --name handson-ml2 --gpus all -p 8888:8888 -p 6006:6006 --log-opt mode=non-blocking --log-opt max-buffer-size=50m -d -v `pwd`:/home/devel/handson-ml2 ageron/handson-ml2:latest-gpu /opt/conda/envs/tf2/bin/jupyter notebook --ip='0.0.0.0' --port=8888 --no-browser
+$ docker run --name handson-ml2 --gpus all -p 8888:8888 -p 6006:6006 --log-opt mode=non-blocking --log-opt max-buffer-size=50m -v `pwd`:/home/devel/handson-ml2 ageron/handson-ml2:latest-gpu /opt/conda/envs/tf2/bin/jupyter notebook --ip='0.0.0.0' --port=8888 --no-browser
 ```
 
 If you are using an older version of Docker, then replace `--gpus all` with `--runtime=nvidia`.
 
-Then, after a second or two, display the container's logs like this:
+Now point your browser to the displayed URL: Jupyter should appear, and you can open a notebook and run `import tensorflow as tf` and `tf.config.list_physical_devices("GPU)` as above to confirm that TensorFlow does indeed see your GPU device(s).
+
+Lastly, to interrupt the server, press Ctrl-C, then run:
 
 ```bash
-$ docker logs handson-ml2
-[...]
-     or http://127.0.0.1:8888/?token=[...]
-```
-
-And point your browser to the displayed URL. Again, Jupyter should appear, and you can run the `tf.config.list_physical_devices("GPU)` code as above to confirm that TensorFlow does indeed see your GPU device(s).
-
-To stop and destroy the container (but not the image), run:
-
-```bash
-$ docker stop handson-ml2
 $ docker rm handson-ml2
 ```
+
+This will remove the container so you can start a new one later (but it will not remove the image or the notebooks, don't worry!).
 
 Have fun!
