@@ -18,7 +18,6 @@ The first option is to pull the image from Docker Hub (this will download over 2
 
 ```bash
 $ docker pull ageron/handson-ml2
-$ docker tag ageron/handson-ml2 handson-ml2
 ```
 
 Alternatively, you can build the image yourself. This will be slower, but it will ensure the image is up to date, with the latest libraries. For this, assuming you already downloaded this project into the directory `/path/to/project/handson-ml2`:
@@ -80,7 +79,6 @@ If you want to pull the prebuilt image from Docker Hub (this will download over 
 
 ```bash
 $ docker pull ageron/handson-ml2:latest-gpu
-$ docker tag ageron/handson-ml2:latest-gpu handson-ml2
 ```
 
 If you prefer to build the image yourself, edit `docker-compose.yml`, replace the line `dockerfile: ./docker/Dockerfile` with `dockerfile: ./docker/Dockerfile.gpu`, and then run the following commands (assuming this project is located at `/path/to/project/handson-ml2`):
