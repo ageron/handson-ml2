@@ -8,7 +8,7 @@ services:
         - username=devel
         - userid=1000
     container_name: handson-ml2
-    image: handson-ml2
+    image: ageron/handson-ml2:latest #latest-gpu
     restart: unless-stopped
     logging:
       driver: json-file
