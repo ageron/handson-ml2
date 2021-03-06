@@ -28,6 +28,7 @@ ARG LIBNVINFER_MAJOR_VERSION=7
 SHELL ["/bin/bash", "-c"]
 # Pick up some TF dependencies
 # [HOML2] Tweaked for handson-ml2: added all the libs before build-essentials
+#         and call apt clean + remove apt cache.
 RUN apt-get update -q && apt-get install -q -y --no-install-recommends \
         bzip2 \
         ca-certificates \
