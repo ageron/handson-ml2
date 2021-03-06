@@ -13,7 +13,7 @@ Some general knowledge about `docker` infrastructure might be useful (that's an 
 
 ### Prepare the image (once)
 
-The first option is to pull the image from Docker Hub (this will download over 2.3 GB of data):
+The first option is to pull the image from Docker Hub (this will download about 1.9 GB of compressed data):
 
 ```bash
 $ docker pull ageron/handson-ml2
@@ -35,7 +35,7 @@ After the process is finished you have an `ageron/handson-ml2:latest` image, tha
 ```bash
 $ docker images
 REPOSITORY            TAG         IMAGE ID            CREATED             SIZE
-ageron/handson-ml2    latest      6c4dc2c7c516        2 minutes ago       6.49GB
+ageron/handson-ml2    latest      3ebafebc604a        2 minutes ago       4.87GB
 ```
 
 ### Run the notebooks
@@ -91,7 +91,7 @@ $ edit environment.yml  # use your favorite editor
 
 ### Prepare the image (once)
 
-If you want to pull the prebuilt image from Docker Hub (this will download over 4 GB of data):
+If you want to pull the prebuilt image from Docker Hub (this will download over 3.5 GB of compressed data):
 
 ```bash
 $ docker pull ageron/handson-ml2:latest-gpu
