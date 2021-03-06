@@ -66,7 +66,9 @@ RUN apt-get update -q && apt-get install -q -y --no-install-recommends \
         libzmq3-dev \
         pkg-config \
         software-properties-common \
-        unzip
+        unzip \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
 
 # Install TensorRT if not building for PowerPC
 RUN [[ "${ARCH}" = "ppc64le" ]] || { apt-get update && \
@@ -126,10 +128,12 @@ RUN wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-${CONDA_VERSION}
 # Now we're ready to create our conda environment
 
 COPY environment.yml /tmp/
-RUN conda update -y -n base conda \
-    && echo '    - pyvirtualdisplay' >> /tmp/environment.yml \
+RUN echo '    - pyvirtualdisplay' >> /tmp/environment.yml \
     && conda env create -f /tmp/environment.yml \
-    && conda clean -y -t \
+    && conda clean -afy \
+    && find /opt/conda/ -follow -type f -name '*.a' -delete \
+    && find /opt/conda/ -follow -type f -name '*.pyc' -delete \
+    && find /opt/conda/ -follow -type f -name '*.js.map' -delete \
     && rm /tmp/environment.yml
 
 ARG username
