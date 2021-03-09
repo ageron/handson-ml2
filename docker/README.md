@@ -82,7 +82,7 @@ Next, edit the `docker-compose.yml` file:
 
 ```bash
 $ cd /path/to/project/handson-ml2/docker
-$ edit environment.yml  # use your favorite editor
+$ edit docker-compose.yml  # use your favorite editor
 ```
 
 * Replace `dockerfile: ./docker/Dockerfile` with `dockerfile: ./docker/Dockerfile.gpu`
