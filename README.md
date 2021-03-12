@@ -38,24 +38,18 @@ Read the [Docker instructions](https://github.com/ageron/handson-ml2/tree/master
 
 ### Want to install this project on your own machine?
 
-Start by installing [Anaconda](https://www.anaconda.com/distribution/) (or [Miniconda](https://docs.conda.io/en/latest/miniconda.html)), [git](https://git-scm.com/downloads), and if you have a TensorFlow-compatible GPU, install the [GPU driver](https://www.nvidia.com/Download/index.aspx).
+Start by installing [Anaconda](https://www.anaconda.com/distribution/) (or [Miniconda](https://docs.conda.io/en/latest/miniconda.html)), [git](https://git-scm.com/downloads), and if you have a TensorFlow-compatible GPU, install the [GPU driver](https://www.nvidia.com/Download/index.aspx), as well as the appropriate version of CUDA and cuDNN (see TensorFlow's documentation for more details).
 
 Next, clone this project by opening a terminal and typing the following commands (do not type the first `$` signs on each line, they just indicate that these are terminal commands):
 
     $ git clone https://github.com/ageron/handson-ml2.git
     $ cd handson-ml2
 
-If you want to use a GPU, then edit `environment.yml` (or `environment-windows.yml` on Windows) and replace `tensorflow=2.0.0` with `tensorflow-gpu=2.0.0`. Also replace `tensorflow-serving-api==2.0.0` with `tensorflow-serving-api-gpu==2.0.0`.
-
 Next, run the following commands:
 
-    $ conda env create -f environment.yml # or environment-windows.yml on Windows
+    $ conda env create -f environment.yml
     $ conda activate tf2
     $ python -m ipykernel install --user --name=python3
-
-Then if you're on Windows, run the following command:
-
-    $ pip install --no-index -f https://github.com/Kojoley/atari-py/releases atari_py
 
 Finally, start Jupyter:
 
@@ -64,4 +58,4 @@ Finally, start Jupyter:
 If you need further instructions, read the [detailed installation instructions](INSTALL.md).
 
 ## Contributors
-I would like to thank everyone who contributed to this project, either by providing useful feedback, filing issues or submitting Pull Requests. Special thanks go to Haesun Park who helped on some of the exercise solutions, and to Steven Bunkley and Ziembla who created the `docker` directory. Thanks as well to github user SuperYorio for helping out on the coding exercise solutions.
+I would like to thank everyone [who contributed to this project](https://github.com/ageron/handson-ml2/graphs/contributors), either by providing useful feedback, filing issues or submitting Pull Requests. Special thanks go to Haesun Park and Ian Beauregard who reviewed every notebook and submitted many PRs, including help on some of the exercise solutions. Thanks as well to Steven Bunkley and Ziembla who created the `docker` directory, and to github user SuperYorio who helped on some exercise solutions.

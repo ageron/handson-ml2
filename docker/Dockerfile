@@ -1,20 +1,30 @@
 FROM continuumio/miniconda3:latest
 
-RUN apt-get update && apt-get upgrade -y \
-    && apt-get install -y \
-        libpq-dev \
+RUN apt-get update && apt-get install -y \
         build-essential \
+        cmake \
+        ffmpeg \
         git \
+        libboost-all-dev \
+        libjpeg-dev \
+        libpq-dev \
+        libsdl2-dev swig \
         sudo \
-        cmake zlib1g-dev libjpeg-dev xvfb ffmpeg xorg-dev libboost-all-dev libsdl2-dev swig \
-        unzip zip \
+        unzip \
+        xorg-dev \
+        xvfb \
+        zip \
+        zlib1g-dev \
+    && apt clean \
     && rm -rf /var/lib/apt/lists/*
 
 COPY environment.yml /tmp/
-RUN conda update -y -n base conda \
-    && echo '    - pyvirtualdisplay' >> /tmp/environment.yml \
+RUN echo '    - pyvirtualdisplay' >> /tmp/environment.yml \
     && conda env create -f /tmp/environment.yml \
-    && conda clean -y -t \
+    && conda clean -afy \
+    && find /opt/conda/ -follow -type f -name '*.a' -delete \
+    && find /opt/conda/ -follow -type f -name '*.pyc' -delete \
+    && find /opt/conda/ -follow -type f -name '*.js.map' -delete \
     && rm /tmp/environment.yml
 
 ARG username
