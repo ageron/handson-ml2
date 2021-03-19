@@ -4,6 +4,7 @@ channels:
   - defaults
 dependencies:
   - atari_py=0.2 # used only in chapter 18
+  - box2d-py=2.3 # used only in chapter 18
   - ftfy=5.8 # used only in chapter 16 by the transformers library
   - graphviz # used only in chapter 6 for dot files
   - gym=0.18 # used only in chapter 18
