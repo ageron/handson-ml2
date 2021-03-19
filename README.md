@@ -59,20 +59,25 @@ If you need further instructions, read the [detailed installation instructions](
 
 # FAQ
 
-Which Python version should I use?
-:I recommend Python 3.7. If you follow the installation instructions above, that's the version you will get. Most code will work with other versions of Python 3, but some libraries do not support Python 3.8 or 3.9 yet, which is why I recommend Python 3.7.
+**Which Python version should I use?**
 
-I'm getting an error when I call `load_housing_data()`.
-:Make sure you call `fetch_housing_data()` *before* you call `load_housing_data()`. If you're getting an HTTP error, make sure you're running the exact same code as in the notebook (copy/paste it if needed). If the problem persists, please check your network configuration.
+I recommend Python 3.7. If you follow the installation instructions above, that's the version you will get. Most code will work with other versions of Python 3, but some libraries do not support Python 3.8 or 3.9 yet, which is why I recommend Python 3.7.
 
-I'm getting an SSL error on MacOSX
-:You probably need to install the SSL certificates (see this [StackOverflow question](https://stackoverflow.com/questions/27835619/urllib-and-ssl-certificate-verify-failed-error)). If you downloaded Python from the official website, then run `/Applications/Python\ 3.7/Install\ Certificates.command` in a terminal (change `3.7` to whatever version you installed). If you installed Python using MacPorts, run `sudo port install curl-ca-bundle` in a terminal.
+**I'm getting an error when I call `load_housing_data()`**
 
-I've installed this project locally. How do I update it to the latest version?
-:See [INSTALL.md](INSTALL.md)
+Make sure you call `fetch_housing_data()` *before* you call `load_housing_data()`. If you're getting an HTTP error, make sure you're running the exact same code as in the notebook (copy/paste it if needed). If the problem persists, please check your network configuration.
 
-How do I update my Python libraries to the latest versions, when using Anaconda?
-:See [INSTALL.md](INSTALL.md)
+**I'm getting an SSL error on MacOSX**
+
+You probably need to install the SSL certificates (see this [StackOverflow question](https://stackoverflow.com/questions/27835619/urllib-and-ssl-certificate-verify-failed-error)). If you downloaded Python from the official website, then run `/Applications/Python\ 3.7/Install\ Certificates.command` in a terminal (change `3.7` to whatever version you installed). If you installed Python using MacPorts, run `sudo port install curl-ca-bundle` in a terminal.
+
+**I've installed this project locally. How do I update it to the latest version?**
+
+See [INSTALL.md](INSTALL.md)
+
+**How do I update my Python libraries to the latest versions, when using Anaconda?**
+
+See [INSTALL.md](INSTALL.md)
 
 ## Contributors
 I would like to thank everyone [who contributed to this project](https://github.com/ageron/handson-ml2/graphs/contributors), either by providing useful feedback, filing issues or submitting Pull Requests. Special thanks go to Haesun Park and Ian Beauregard who reviewed every notebook and submitted many PRs, including help on some of the exercise solutions. Thanks as well to Steven Bunkley and Ziembla who created the `docker` directory, and to github user SuperYorio who helped on some exercise solutions.
