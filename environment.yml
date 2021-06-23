@@ -42,7 +42,7 @@ dependencies:
     - tensorflow-hub==0.9.0 # trained ML models repository, ready to use
     - tensorflow-probability==0.12.1 # Optional. Probability/Stats lib.
     - tensorflow-serving-api==2.4.1 # or tensorflow-serving-api-gpu if gpu
-    - tensorflow==2.4.1 # Deep Learning library
+    - tensorflow==2.4.2 # Deep Learning library
     - tf-agents==0.7.1 # Reinforcement Learning lib based on TensorFlow
     - tfx==0.27.0 # platform to deploy production ML pipelines
     - urlextract==1.2.0 # optionally used in chapter 3, exercise 4

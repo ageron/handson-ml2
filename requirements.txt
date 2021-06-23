@@ -27,7 +27,7 @@ transformers==4.3.2
 # you must install CUDA, cuDNN and more: see tensorflow.org for the detailed
 # installation instructions.
 
-tensorflow==2.4.1
+tensorflow==2.4.2
 # Optional: the TF Serving API library is just needed for chapter 19.
 tensorflow-serving-api==2.4.1 # or tensorflow-serving-api-gpu if gpu
 
