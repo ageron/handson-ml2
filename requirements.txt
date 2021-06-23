@@ -56,7 +56,7 @@ gym[atari,Box2D]==0.18.0
 tf-agents==0.7.1
 
 ##### Image manipulation
-Pillow==8.1.2
+Pillow==8.2.0
 graphviz==0.16
 opencv-python==4.5.1.48
 pyglet==1.5.0
