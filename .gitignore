@@ -18,7 +18,6 @@ person_pb2.py
 datasets/flowers
 datasets/lifesat/lifesat.csv
 datasets/spam
-datasets/titanic
 datasets/words
 datasets/jsb_chorales
 
