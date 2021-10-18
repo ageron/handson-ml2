@@ -50,7 +50,6 @@ tensorflow-addons~=0.14.0
 gym[Box2D,atari,accept-rom-license]~=0.21.0
 
 tf-agents~=0.10.0
-ale-py~=0.7.2
 
 ##### Image manipulation
 Pillow~=8.4.0
