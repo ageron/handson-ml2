@@ -147,7 +147,7 @@ RUN set -x && \
 # Now we're ready to create our conda environment
 
 COPY environment.yml /tmp/
-RUN echo "\n    - pyvirtualdisplay" >> /tmp/environment.yml \
+RUN printf "\n    - pyvirtualdisplay" >> /tmp/environment.yml \
     && conda env create -f /tmp/environment.yml \
     && conda clean -afy \
     && find /opt/conda/ -follow -type f -name '*.a' -delete \
