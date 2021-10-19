@@ -1,6 +1,6 @@
-# TensorFlow is much easier to install using Anaconda, especially
-# on Windows or when using a GPU. Please see the installation
-# instructions in INSTALL.md
+# WARNING: Using Anaconda instead of pip is highly recommended, especially on
+# Windows or when using a GPU. Please see the installation instructions in
+# INSTALL.md
 
 
 ##### Core scientific packages
@@ -48,6 +48,11 @@ tensorflow-addons~=0.14.0
 # There are a few dependencies you need to install first, check out:
 # https://github.com/openai/gym#installing-everything
 gym[Box2D,atari,accept-rom-license]~=0.21.0
+
+# WARNING: on Windows, installing Box2D this way requires:
+# * Swig: http://www.swig.org/download.html
+# * Microsoft C++ Build Tools: https://visualstudio.microsoft.com/visual-cpp-build-tools/
+# It's much easier to use Anaconda instead.
 
 tf-agents~=0.10.0
 
