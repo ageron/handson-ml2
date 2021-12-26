@@ -57,7 +57,7 @@ If you need further instructions, read the [detailed installation instructions](
 
 **Which Python version should I use?**
 
-I recommend Python 3.7. If you follow the installation instructions above, that's the version you will get. Most code will work with other versions of Python 3, but some libraries do not support Python 3.8 or 3.9 yet, which is why I recommend Python 3.7.
+I recommend Python 3.8. If you follow the installation instructions above, that's the version you will get. Most code will work with other versions of Python 3, but some libraries do not support Python 3.9 or 3.10 yet, which is why I recommend Python 3.8.
 
 **I'm getting an error when I call `load_housing_data()`**
 
@@ -65,7 +65,7 @@ Make sure you call `fetch_housing_data()` *before* you call `load_housing_data()
 
 **I'm getting an SSL error on MacOSX**
 
-You probably need to install the SSL certificates (see this [StackOverflow question](https://stackoverflow.com/questions/27835619/urllib-and-ssl-certificate-verify-failed-error)). If you downloaded Python from the official website, then run `/Applications/Python\ 3.7/Install\ Certificates.command` in a terminal (change `3.7` to whatever version you installed). If you installed Python using MacPorts, run `sudo port install curl-ca-bundle` in a terminal.
+You probably need to install the SSL certificates (see this [StackOverflow question](https://stackoverflow.com/questions/27835619/urllib-and-ssl-certificate-verify-failed-error)). If you downloaded Python from the official website, then run `/Applications/Python\ 3.8/Install\ Certificates.command` in a terminal (change `3.8` to whatever version you installed). If you installed Python using MacPorts, run `sudo port install curl-ca-bundle` in a terminal.
 
 **I've installed this project locally. How do I update it to the latest version?**
 
