@@ -1,7 +1,7 @@
 Machine Learning Notebooks
 ==========================
 
-# ⚠ The 3rd edition of my book will be released in October 2022. The notebooks are available at ageron/handson-ml3[https://github.com/ageron/handson-ml3] and contain more up-to-date code.
+# ⚠ The 3rd edition of my book will be released in October 2022. The notebooks are available at [ageron/handson-ml3](https://github.com/ageron/handson-ml3) and contain more up-to-date code.
 
 This project aims at teaching you the fundamentals of Machine Learning in
 python. It contains the example code and solutions to the exercises in the second edition of my O'Reilly book [Hands-on Machine Learning with Scikit-Learn, Keras and TensorFlow](https://www.oreilly.com/library/view/hands-on-machine-learning/9781492032632/):
