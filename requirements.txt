@@ -1,0 +1,93 @@
+# WARNING: Using Anaconda instead of pip is highly recommended, especially on
+# Windows or when using a GPU. Please see the installation instructions in
+# INSTALL.md
+
+
+##### Core scientific packages
+jupyter~=1.0.0
+matplotlib~=3.4.3
+numpy~=1.19.5
+pandas~=1.3.3
+scipy~=1.7.1
+
+##### Machine Learning packages
+scikit-learn~=1.0
+
+# Optional: the XGBoost library is only used in chapter 7
+xgboost~=1.4.2
+
+# Optional: the transformers library is only using in chapter 16
+transformers~=4.11.3
+
+##### TensorFlow-related packages
+
+# If you have a TF-compatible GPU and you want to enable GPU support, then
+# replace tensorflow-serving-api with tensorflow-serving-api-gpu.
+# Your GPU must have CUDA Compute Capability 3.5 or higher support, and
+# you must install CUDA, cuDNN and more: see tensorflow.org for the detailed
+# installation instructions.
+
+tensorflow~=2.6.0
+# Optional: the TF Serving API library is just needed for chapter 19.
+tensorflow-serving-api~=2.6.0 # or tensorflow-serving-api-gpu if gpu
+
+tensorboard~=2.7.0
+tensorboard-plugin-profile~=2.5.0
+tensorflow-datasets~=4.4.0
+tensorflow-hub~=0.12.0
+tensorflow-probability~=0.14.1
+
+# Optional: only used in chapter 13.
+tfx~=1.3.0
+
+# Optional: only used in chapter 16.
+tensorflow-addons~=0.14.0
+
+##### Reinforcement Learning library (chapter 18)
+
+# There are a few dependencies you need to install first, check out:
+# https://github.com/openai/gym#installing-everything
+gym[Box2D,atari,accept-rom-license]~=0.21.0
+
+# WARNING: on Windows, installing Box2D this way requires:
+# * Swig: http://www.swig.org/download.html
+# * Microsoft C++ Build Tools: https://visualstudio.microsoft.com/visual-cpp-build-tools/
+# It's much easier to use Anaconda instead.
+
+tf-agents~=0.10.0
+
+##### Image manipulation
+Pillow~=8.4.0
+graphviz~=0.17
+opencv-python~=4.5.3.56
+pyglet~=1.5.21
+
+#pyvirtualdisplay # needed in chapter 18, if on a headless server
+                  # (i.e., without screen, e.g., Colab or VM)
+
+
+##### Additional utilities
+
+# Efficient jobs (caching, parallelism, persistence)
+joblib~=0.14.1
+
+# Easy http requests
+requests~=2.26.0
+
+# Nice utility to diff Jupyter Notebooks.
+nbdime~=3.1.0
+
+# May be useful with Pandas for complex "where" clauses (e.g., Pandas
+# tutorial).
+numexpr~=2.7.3
+
+# Optional: these libraries can be useful in the chapter 3, exercise 4.
+nltk~=3.6.5
+urlextract~=1.4.0
+
+# Optional: these libraries are only used in chapter 16
+ftfy~=6.0.3
+
+# Optional: tqdm displays nice progress bars, ipywidgets for tqdm's notebook support
+tqdm~=4.62.3
+ipywidgets~=7.6.5
