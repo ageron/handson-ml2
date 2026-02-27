@@ -79,3 +79,5 @@ See [INSTALL.md](INSTALL.md)
 
 ## Contributors
 I would like to thank everyone [who contributed to this project](https://github.com/ageron/handson-ml2/graphs/contributors), either by providing useful feedback, filing issues or submitting Pull Requests. Special thanks go to Haesun Park and Ian Beauregard who reviewed every notebook and submitted many PRs, including help on some of the exercise solutions. Thanks as well to Steven Bunkley and Ziembla who created the `docker` directory, and to github user SuperYorio who helped on some exercise solutions.
+
+This fork is for practicing contributions.
