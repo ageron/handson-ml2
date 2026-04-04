@@ -37,6 +37,11 @@ Next, activate the new environment:
 
     $ conda activate tf2
 
+If `conda env create` crashes with `PermissionError: [Errno 13]` in CUDA/plugin detection or cannot write to conda cache files, retry with:
+
+    $ mkdir -p .cache
+    $ XDG_CACHE_HOME=$PWD/.cache CONDA_OVERRIDE_CUDA='' conda env create -f environment.yml
+
 
 ## Start Jupyter
 You're almost there! You just need to register the `tf2` conda environment to Jupyter. The notebooks in this project will default to the environment named `python3`, so it's best to register this environment using the name `python3` (if you prefer to use another name, you will have to select it in the "Kernel > Change kernel..." menu in Jupyter every time you open a notebook):
