@@ -18,7 +18,7 @@ dependencies:
   - opencv=4.5  # used only in chapter 18 by TF Agents for image preprocessing
   - pandas=1.3  # data analysis and manipulation tool
   - pillow=8.3  # image manipulation library, (used by matplotlib.image.imread)
-  - pip  # Python's package-management system
+  - pip=23.3  # keep pip <24 for gym 0.21 build compatibility
   - py-xgboost=1.4  # used only in chapter 7 for optimized Gradient Boosting
   - pyglet=1.5  # used only in chapter 18 to render environments
   - pyopengl=3.1  # used only in chapter 18 to render environments
@@ -29,7 +29,7 @@ dependencies:
   - scikit-learn=1.0  # machine learning library
   - scipy=1.7  # scientific/technical computing library
   - tqdm=4.62  # a progress bar library
-  - wheel  # built-package format for pip
+  - wheel=0.37  # newer wheel rejects gym 0.21 legacy metadata
   - widgetsnbextension=3.5  # interactive HTML widgets for Jupyter notebooks
   - pip:
     - tensorboard-plugin-profile~=2.5.0  # profiling plugin for TensorBoard
